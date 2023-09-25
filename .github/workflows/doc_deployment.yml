@@ -19,6 +19,7 @@ jobs:
       - name: Build Site
         run: |
           source .venv/bin/activate
+          cd r-type
           mkdocs build
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
