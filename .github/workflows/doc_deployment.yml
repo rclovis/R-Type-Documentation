@@ -18,6 +18,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build Site
         run: |
+          source .venv/bin/activate
           mkdocs build
       - name: Deploy Site
         uses: peaceiris/actions-gh-pages@v3
