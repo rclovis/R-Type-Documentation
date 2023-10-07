@@ -4,26 +4,66 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
         
         
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Haze Engine Documentation - My Docs</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>My Docs</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body>
+    <body class="homepage">
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">My Docs</a>
+                <a class="navbar-brand" href=".">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
                 <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">R-Type Documentation</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Haze <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="Haze/Entity/" class="dropdown-item">Entity</a>
+</li>
+                                    
+<li>
+    <a href="Haze/Haze%20introduction/" class="dropdown-item">Haze introduction</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Protocol <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
+</li>
+                                    
+<li>
+    <a href="Protocol/Inputs/" class="dropdown-item">Inputs</a>
+</li>
+                                    
+<li>
+    <a href="Protocol/Protocol/" class="dropdown-item">Protocol</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
 
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
@@ -31,6 +71,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="Haze/Entity/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -49,17 +99,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#haze-engine-documentation" class="nav-link">Haze Engine Documentation</a>
+            <li class="nav-item" data-level="1"><a href="#r-type-documentation" class="nav-link">R-Type Documentation</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#getting-started" class="nav-link">Getting Started</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#components" class="nav-link">Components</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#example-usage" class="nav-link">Example Usage</a>
+            <li class="nav-item" data-level="2"><a href="#doc" class="nav-link">Doc</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -70,87 +120,41 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="haze-engine-documentation">Haze Engine Documentation</h1>
-<p>The Haze Engine is a game engine built on top of the Simple and Fast Multimedia Library (SFML).
-It provides an interface for creating 2D games and multimedia applications optimized for desktop computers.</p>
+<h1 id="r-type-documentation">R-Type Documentation</h1>
+<p>The R-Type project aims at developing a clone of the classic side-scrolling shoot 'em up arcade game called "R-Type." The project involves creating a server that will run the game, and a client that will be able to display the game. This version of R-Type is multiplayer and the game is developed using a custom engine of our own called Haze.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin, ensure you have met the following requirements:
+- SFML
+- Asio</p>
 <h2 id="getting-started">Getting Started</h2>
-<p>To get started with the Haze Engine, follow these steps:</p>
+<p>To install and launch R-Type, follow these steps:</p>
 <ol>
-<li>
-<p>Include the necessary header files:</p>
-</li>
-<li>
-<p>Create an instance of the Haze::Engine class:</p>
-</li>
+<li>Clone the github project</li>
 </ol>
-<pre><code class="language-cpp">Haze::Engine engine;
+<pre><code>git clone https://github.com/votre-utilisateur/haze-engine.git
 </code></pre>
 <ol>
-<li>Initialize the engine:</li>
+<li>Create the build directory</li>
 </ol>
-<pre><code class="language-cpp">engine.init();
+<pre><code>cmake -S . -B build
 </code></pre>
 <ol>
-<li>Create entities using the Haze::Entity class:</li>
+<li>Compile the project</li>
 </ol>
-<pre><code class="language-cpp">Haze::Entity *entity1 = engine.createEntity();
-Haze::Entity *entity2 = engine.createEntity();
+<pre><code>cmake --build build
 </code></pre>
 <ol>
-<li>Add components to the entities. Here are some examples:
-Add a Haze::Position component:</li>
+<li>Execute the binaries
+Server:</li>
 </ol>
-<pre><code class="language-cpp">entity1-&gt;addComponent(new Haze::Position(0, 0));
+<pre><code>./build/r-type-server
 </code></pre>
-<p>Add a Haze::Sprite component:</p>
-<pre><code class="language-cpp">entity1-&gt;addComponent(new Haze::Sprite(&quot;assets/ship.png&quot;));
+<p>Client:</p>
+<pre><code>./build/r-type-client
 </code></pre>
-<p>Add a Haze::Animation component:</p>
-<pre><code class="language-cpp">entity1-&gt;addComponent(new Haze::Animation(&quot;assets/r-typesheet30a.gif&quot;, 34, 34, 3, 1));
-</code></pre>
-<p>Add a Haze::Window component:</p>
-<pre><code class="language-cpp">entity2-&gt;addComponent(new Haze::Window(800, 600));
-</code></pre>
-<p>Start the game loop by checking if the engine is open:</p>
-<pre><code class="language-cpp">while (engine.isOpen())
-{
-    engine.update();
-}
-</code></pre>
-<h2 id="components">Components</h2>
-<p><strong>Haze::Position</strong>
-The <strong>Haze::Position</strong> component represents the position of an entity in the game world. It takes two arguments: the X and Y coordinates.</p>
-<p><strong>Haze::Sprite</strong>
-The <strong>Haze::Sprite</strong> component allows you to display a sprite for an entity. It takes the path to the sprite image as an argument.</p>
-<p><strong>Haze::Animation</strong>
-The <strong>Haze::Animation</strong> component enables you to create animations for entities. It takes the following arguments:</p>
-<p>The <strong>Haze::Window</strong> component is used to create a window for your game. It takes the width and height of the window as arguments.</p>
-<h2 id="example-usage">Example Usage</h2>
-<p>Here's an example of how to use the Haze Engine to create a simple game loop:</p>
-<pre><code class="language-cpp">#include &lt;Haze&gt;
-
-int main()
-{
-    Haze::Engine engine;
-    engine.init();
-
-    Haze::Entity *entity1 = engine.createEntity();
-    Haze::Entity *entity2 = engine.createEntity();
-
-    entity1-&gt;addComponent(new Haze::Position(0, 0));
-    entity1-&gt;addComponent(new Haze::Sprite(&quot;assets/ship.png&quot;));
-    entity1-&gt;addComponent(new Haze::Animation(&quot;assets/r-typesheet30a.gif&quot;, 34, 34, 3, 1));
-
-    entity2-&gt;addComponent(new Haze::Window(800, 600));
-
-    while (engine.isOpen())
-    {
-        engine.update();
-    }
-
-    return 0;
-}
-</code></pre></div>
+<h2 id="doc">Doc</h2>
+<p>[[Haze introduction]]
+[[Protocol]]</p></div>
             </div>
         </div>
 
@@ -158,14 +162,14 @@ int main()
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script>
-            var base_url = "..",
+            var base_url = ".",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -230,3 +234,8 @@ int main()
 
     </body>
 </html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2023-10-07 16:53:30.137863+00:00
+-->
