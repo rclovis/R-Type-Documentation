@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Protocol - My Docs</title>
+        <title>Component - My Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,49 +33,49 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">R-Type Documentation</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Haze <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Haze/Component/" class="dropdown-item">Component</a>
+    <a href="./" class="dropdown-item active">Component</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/ComponentGfx/" class="dropdown-item">ComponentGfx</a>
+    <a href="../ComponentGfx/" class="dropdown-item">ComponentGfx</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Engine/" class="dropdown-item">Engine</a>
+    <a href="../Engine/" class="dropdown-item">Engine</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Entity/" class="dropdown-item">Entity</a>
+    <a href="../Entity/" class="dropdown-item">Entity</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Haze%20introduction/" class="dropdown-item">Haze introduction</a>
+    <a href="../Haze%20introduction/" class="dropdown-item">Haze introduction</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Pipelines/" class="dropdown-item">Pipelines</a>
+    <a href="../Pipelines/" class="dropdown-item">Pipelines</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Protocol <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Component%20Data/" class="dropdown-item">Component Data</a>
+    <a href="../../Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
 </li>
                                     
 <li>
-    <a href="../Inputs/" class="dropdown-item">Inputs</a>
+    <a href="../../Protocol/Inputs/" class="dropdown-item">Inputs</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Protocol</a>
+    <a href="../../Protocol/Protocol/" class="dropdown-item">Protocol</a>
 </li>
                                 </ul>
                             </li>
@@ -88,12 +88,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../Inputs/" class="nav-link">
+                                <a rel="prev" href="../.." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../ComponentGfx/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -114,168 +114,160 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="2"><a href="#header" class="nav-link">Header</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#body" class="nav-link">Body</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="header">Header</h2>
-<p>Each message should have a header with:
-- A <strong>timestamp</strong>
-- An <strong>id</strong>
-- A <strong>body size</strong></p>
-<h3 id="id-client-server">ID Client -&gt; Server</h3>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Body</th>
-<th>Response ID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>INPUT</td>
-<td>info_inputs</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>GET_ENTITY</td>
-<td>id_entity</td>
-<td>INFO_ENTITY</td>
-</tr>
-<tr>
-<td>GET_ENTITIES</td>
-<td>NONE</td>
-<td>INFO_ENTITIES</td>
-</tr>
-<tr>
-<td>GET_COMPONENT</td>
-<td>id_component</td>
-<td>INFO_COMPONENT</td>
-</tr>
-<tr>
-<td>ALIVE</td>
-<td>NONE</td>
-<td>NONE</td>
-</tr>
-</tbody>
-</table>
-<h3 id="id-server-client">ID Server -&gt; Client</h3>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Body</th>
-<th>Response ID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CREATE_ENTITY</td>
-<td>id_entity</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>DELETE_ENTITY</td>
-<td>id_entity</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>ADD_COMPONENT</td>
-<td>info_component</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>REMOVE_COMPONENT</td>
-<td>id_component</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>INFO_COMPONENT</td>
-<td>info_component</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>INFO_ENTITY</td>
-<td>info_entity</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>INFO_ENTITIES</td>
-<td>info_entities</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>DEAD</td>
-<td>NONE</td>
-<td>NONE</td>
-</tr>
-</tbody>
-</table>
-<h2 id="body">Body</h2>
-<p>The body of a message is just raw data that can be interpreted thanks to the header.</p>
-<ul>
-<li><strong>info_inputs</strong></li>
-</ul>
-<pre><code class="language-cpp">struct info_inputs {
-    std::vector&lt;InputType&gt; inputsPressed;
-    std::vector&lt;InputType&gt; inputsReleased;
-    MouseType mouseType;
-    int x;
-    int y;
-};
-</code></pre>
-<p>InputType at [[R-Type/Documentation/Protocol/Inputs|Inputs]]
-MouseType at [[R-Type/Documentation/Protocol/Inputs|Inputs]]</p>
-<ul>
-<li><strong>id_entity</strong></li>
-</ul>
-<pre><code class="language-cpp">struct id_entity {
-    int id;
-};
-</code></pre>
-<ul>
-<li><strong>id_component</strong></li>
-</ul>
-<pre><code class="language-cpp">struct id_component {
-    id_entity id;
-    std::string component;
-};
-</code></pre>
-<ul>
-<li><strong>info_entity</strong></li>
-</ul>
-<pre><code class="language-cpp">struct info_entity {
-    id_entity id;
-    std::vector&lt;std::string&gt; components;
-};
-</code></pre>
-<ul>
-<li><strong>info_component</strong></li>
-</ul>
-<pre><code class="language-cpp">struct info_component {
-    std::string component;
-    std::vector&lt;uint8_t&gt; data = std::vector&lt;uint8_t&gt;(128);
-};
-</code></pre>
-<p>Data at [[Component Data]]</p>
-<ul>
-<li><strong>info_entities</strong></li>
-</ul>
-<pre><code class="language-cpp">struct info_entities {
-    std::vector&lt;id_entity&gt; id;
-};
+<pre><code class="language-cpp">#include &quot;inputs.hpp&quot;
+
+namespace Haze
+{
+    class Component
+    {
+    public:
+        virtual ~Component() {}
+        virtual std::string getType() const = 0;
+        virtual void show() const = 0;
+    };
+
+    struct Position : public Component
+    {
+        Position(float x, float y) : x(x), y(y) {}
+        float x;
+        float y;
+        std::string getType() const override { return &quot;Position&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Position: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
+    };
+
+    struct Scale : public Component
+    {
+        Scale(float x, float y) : x(x), y(y) {}
+        float x;
+        float y;
+        std::string getType() const override { return &quot;Scale&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Scale: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
+    };
+
+    struct Velocity : public Component
+    {
+        Velocity(float x, float y) : x(x), y(y) {}
+        float x;
+        float y;
+        std::string getType() const override { return &quot;Velocity&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Velocity: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
+    };
+
+    struct Move : public Component
+    {
+        Move(float x, float y) : x(x), y(y) {}
+        float x;
+        float y;
+        std::string getType() const override { return &quot;Move&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Move: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
+    };
+
+    struct Health : public Component
+    {
+        Health(int health) : health(health) {}
+        int health;
+        std::string getType() const override { return &quot;Health&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Health: &quot; &lt;&lt; health &lt;&lt; std::endl; }
+    };
+
+    struct Damage : public Component
+    {
+        Damage(int damage) : damage(damage) {}
+        int damage;
+        std::string getType() const override { return &quot;Damage&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Damage: &quot; &lt;&lt; damage &lt;&lt; std::endl; }
+    };
+
+    struct Collision : public Component
+    {
+        enum CollisionType
+        {
+            NONE = 0,
+            LAMBDA = 1,
+            WALL = 2,
+        };
+        struct CollisionInfo
+        {
+            CollisionType type;
+            double tics;
+            std::function&lt;void(int, int)&gt; onCollision = [](int i, int j) {};
+            std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; lastCollision = std::chrono::high_resolution_clock::now();
+        };
+        Collision(std::string scene, std::map&lt;std::string, CollisionInfo&gt; behavior)
+        : scene(scene), behavior(behavior) {}
+
+        std::string scene;
+        std::map&lt;std::string, CollisionInfo&gt; behavior;
+
+        std::string getType() const override { return &quot;Collision&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Collision: &quot; &lt;&lt; scene &lt;&lt; std::endl; }
+    };
+
+    struct Hitbox : public Component
+    {
+        struct intRect
+        {
+            int x;
+            int y;
+            int width;
+            int height;
+        };
+        Hitbox(std::vector&lt;intRect&gt; hitbox) : hitbox(hitbox) {}
+        std::vector&lt;intRect&gt; hitbox;
+        std::string getType() const override { return &quot;Hitbox&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Hitbox: &quot; &lt;&lt; std::endl; }
+    };
+
+    struct LifeTime : public Component
+    {
+        LifeTime(int lifeTime) : lifeTime(lifeTime) {}
+        int lifeTime;
+        int tics = 0;
+        std::string getType() const override { return &quot;LifeTime&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;LifeTime: &quot; &lt;&lt; lifeTime &lt;&lt; std::endl; }
+    };
+
+    struct OnKeyPressed : public Component
+    {
+        OnKeyPressed(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+        std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
+        size_t player;
+        std::string getType() const override {return &quot;OnKeyPressed&quot;;}
+        void show() const override { std::cout &lt;&lt; &quot;OnKeyPressed&quot; &lt;&lt; std::endl; }
+    };
+
+    struct OnKeyReleased : public Component
+    {
+        OnKeyReleased(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+        std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
+        size_t player;
+        std::string getType() const override{return &quot;OnKeyReleased&quot;;}
+        void show() const override { std::cout &lt;&lt; &quot;OnKeyReleased&quot; &lt;&lt; std::endl; }
+    };
+
+    struct OnMousePressed : public Component
+    {
+        OnMousePressed(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+        std::function&lt;void(int)&gt; callback;
+        size_t player;
+        std::string getType() const override{return &quot;OnMousePressed&quot;;}
+        void show() const override { std::cout &lt;&lt; &quot;OnMousePressed&quot; &lt;&lt; std::endl; }
+    };
+
+    struct OnMouseReleased : public Component
+    {
+        OnMouseReleased(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+        std::function&lt;void(int)&gt; callback;
+        size_t player;
+        std::string getType() const override{return &quot;OnMouseReleased&quot;;}
+        void show() const override { std::cout &lt;&lt; &quot;OnMouseReleased&quot; &lt;&lt; std::endl; }
+    };
+}
 </code></pre></div>
             </div>
         </div>

@@ -4,23 +4,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>My Docs</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Engine - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">My Docs</a>
+                <a class="navbar-brand" href="../..">My Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -30,35 +30,35 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">R-Type Documentation</a>
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">R-Type Documentation</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Haze <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="Haze/Component/" class="dropdown-item">Component</a>
+    <a href="../Component/" class="dropdown-item">Component</a>
 </li>
                                     
 <li>
-    <a href="Haze/ComponentGfx/" class="dropdown-item">ComponentGfx</a>
+    <a href="../ComponentGfx/" class="dropdown-item">ComponentGfx</a>
 </li>
                                     
 <li>
-    <a href="Haze/Engine/" class="dropdown-item">Engine</a>
+    <a href="./" class="dropdown-item active">Engine</a>
 </li>
                                     
 <li>
-    <a href="Haze/Entity/" class="dropdown-item">Entity</a>
+    <a href="../Entity/" class="dropdown-item">Entity</a>
 </li>
                                     
 <li>
-    <a href="Haze/Haze%20introduction/" class="dropdown-item">Haze introduction</a>
+    <a href="../Haze%20introduction/" class="dropdown-item">Haze introduction</a>
 </li>
                                     
 <li>
-    <a href="Haze/Pipelines/" class="dropdown-item">Pipelines</a>
+    <a href="../Pipelines/" class="dropdown-item">Pipelines</a>
 </li>
                                 </ul>
                             </li>
@@ -67,15 +67,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
+    <a href="../../Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
 </li>
                                     
 <li>
-    <a href="Protocol/Inputs/" class="dropdown-item">Inputs</a>
+    <a href="../../Protocol/Inputs/" class="dropdown-item">Inputs</a>
 </li>
                                     
 <li>
-    <a href="Protocol/Protocol/" class="dropdown-item">Protocol</a>
+    <a href="../../Protocol/Protocol/" class="dropdown-item">Protocol</a>
 </li>
                                 </ul>
                             </li>
@@ -88,12 +88,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="../ComponentGfx/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="Haze/Component/" class="nav-link">
+                                <a rel="next" href="../Entity/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,20 +115,23 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#r-type-documentation" class="nav-link">R-Type Documentation</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
+            <li class="nav-item" data-level="2"><a href="#name" class="nav-link">Name</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#getting-started" class="nav-link">Getting Started</a>
+            
+            <li class="nav-item" data-level="2"><a href="#synopsis" class="nav-link">Synopsis</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#doc" class="nav-link">Doc</a>
+            
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-level="2"><a href="#methods" class="nav-link">Methods</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -136,41 +139,77 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="r-type-documentation">R-Type Documentation</h1>
-<p>The R-Type project aims at developing a clone of the classic side-scrolling shoot 'em up arcade game called "R-Type." The project involves creating a server that will run the game, and a client that will be able to display the game. This version of R-Type is multiplayer and the game is developed using a custom engine of our own called Haze.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Before you begin, ensure you have met the following requirements:
-- SFML
-- Asio</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>To install and launch R-Type, follow these steps:</p>
-<ol>
-<li>Clone the github project</li>
-</ol>
-<pre><code>git clone https://github.com/votre-utilisateur/haze-engine.git
+<h2 id="name">Name</h2>
+<p><code>Haze::Engine</code> - a the main engine class.</p>
+<h2 id="synopsis">Synopsis</h2>
+<pre><code class="language-cpp">#include &quot;Entity.hpp&quot;
+#include &quot;ComponentList.hpp&quot;
+#include &quot;IPipeline.hpp&quot;
+#include &quot;protocol.hpp&quot;
+
+namespace Haze
+{
+    class Engine
+    {
+    public:
+        Engine();
+        ~Engine();
+        void init();
+        void update();
+        Entity *createEntity();
+        Entity *getEntity(size_t id);
+        void removeEntity(size_t id);
+        void removeEntity(Entity *entity);
+        bool isOpen();
+        void setInfoInputs(info_inputs info, size_t id);
+        ComponentList *getComponentList();
+        std::vector&lt;info_inputs&gt; *getInfoInputs();
+
+    private:
+        std::vector&lt;std::unique_ptr&lt;Entity&gt;&gt; _entities;
+        std::vector&lt;std::unique_ptr&lt;IPipeline&gt;&gt; _pipelines;
+        ComponentList *_componentList;
+        std::vector&lt;info_inputs&gt; _infoInputs;
+    };
+}
 </code></pre>
-<ol>
-<li>Create the build directory</li>
-</ol>
-<pre><code>cmake -S . -B build
+<h2 id="description">Description</h2>
+<p>The purpose of the <code>Engine</code> class is to encapsulate the entire Haze ecosystem so it can be easily used and extended. </p>
+<h2 id="methods">Methods</h2>
+<pre><code class="language-cpp">void init();
 </code></pre>
-<ol>
-<li>Compile the project</li>
-</ol>
-<pre><code>cmake --build build
+<p><code>init</code> is used just after the creation of the <strong>engine</strong> and and is used to setup everything in the class</p>
+<pre><code class="language-cpp">void update();
 </code></pre>
-<ol>
-<li>Execute the binaries
-Server:</li>
-</ol>
-<pre><code>./build/r-type-server
+<p><code>update</code> is used to compute one tic of the game. It launches every [[Pipelines]] in the engine</p>
+<pre><code class="language-cpp">Entity *createEntity();
 </code></pre>
-<p>Client:</p>
-<pre><code>./build/r-type-client
+<p><code>createEntity</code> is used to add an <strong>entity</strong> to the engine</p>
+<pre><code class="language-cpp">Entity *getEntity(size_t id);
 </code></pre>
-<h2 id="doc">Doc</h2>
-<p>[[Haze/Haze introduction]]
-[[Protocol/Protocol]]</p></div>
+<p><code>getEntity</code> is used to get an <strong>entity</strong> from the engine. Returns <code>nullptr</code> if the entity doesn't exits.</p>
+<pre><code class="language-cpp">void removeEntity(size_t id);
+void removeEntity(Entity *entity);
+</code></pre>
+<p><code>removeEntity</code> deletes an <strong>entity</strong> from the engine</p>
+<pre><code class="language-cpp">bool isOpen();
+</code></pre>
+<p><code>isOpen</code> tells if the engine is still running</p>
+<pre><code class="language-cpp">void setInfoInputs(info_inputs info, size_t id);
+</code></pre>
+<p><code>setInfoInputs</code> is used to simulate input into the engine. Useful if the engine is running without <strong><code>haze-graphics</code></strong> in a server. It takes an info_inputs defined at [[Protocol]] and an id which is the number of the player how has sent this input.</p>
+<blockquote>
+<p>[!warning]
+Here id 0 is where is stored the global inputs.
+It is filled automatically by the <code>pullEvent</code> system from <strong>haze-graphics</strong>
+If you are not taking inputs from other players you should not use this method.</p>
+</blockquote>
+<pre><code class="language-cpp">ComponentList *getComponentList();
+</code></pre>
+<p><code>getComponentList</code> gives the <code>ComponentList</code> of the program <em>(mainly internal use)</em>*</p>
+<pre><code class="language-cpp">std::vector&lt;info_inputs&gt; *getInfoInputs();
+</code></pre>
+<p><code>getInfoInputs</code> gives the list of all of the inputs registered in the engine  <em>(mainly internal use)</em>*</p></div>
             </div>
         </div>
 
@@ -178,14 +217,14 @@ Server:</li>
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -250,8 +289,3 @@ Server:</li>
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.5.3
-Build Date UTC : 2023-10-07 20:15:25.389730+00:00
--->

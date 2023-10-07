@@ -4,23 +4,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>My Docs</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>ComponentGfx - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">My Docs</a>
+                <a class="navbar-brand" href="../..">My Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -30,35 +30,35 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">R-Type Documentation</a>
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">R-Type Documentation</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Haze <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="Haze/Component/" class="dropdown-item">Component</a>
+    <a href="../Component/" class="dropdown-item">Component</a>
 </li>
                                     
 <li>
-    <a href="Haze/ComponentGfx/" class="dropdown-item">ComponentGfx</a>
+    <a href="./" class="dropdown-item active">ComponentGfx</a>
 </li>
                                     
 <li>
-    <a href="Haze/Engine/" class="dropdown-item">Engine</a>
+    <a href="../Engine/" class="dropdown-item">Engine</a>
 </li>
                                     
 <li>
-    <a href="Haze/Entity/" class="dropdown-item">Entity</a>
+    <a href="../Entity/" class="dropdown-item">Entity</a>
 </li>
                                     
 <li>
-    <a href="Haze/Haze%20introduction/" class="dropdown-item">Haze introduction</a>
+    <a href="../Haze%20introduction/" class="dropdown-item">Haze introduction</a>
 </li>
                                     
 <li>
-    <a href="Haze/Pipelines/" class="dropdown-item">Pipelines</a>
+    <a href="../Pipelines/" class="dropdown-item">Pipelines</a>
 </li>
                                 </ul>
                             </li>
@@ -67,15 +67,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
+    <a href="../../Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
 </li>
                                     
 <li>
-    <a href="Protocol/Inputs/" class="dropdown-item">Inputs</a>
+    <a href="../../Protocol/Inputs/" class="dropdown-item">Inputs</a>
 </li>
                                     
 <li>
-    <a href="Protocol/Protocol/" class="dropdown-item">Protocol</a>
+    <a href="../../Protocol/Protocol/" class="dropdown-item">Protocol</a>
 </li>
                                 </ul>
                             </li>
@@ -88,12 +88,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="../Component/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="Haze/Component/" class="nav-link">
+                                <a rel="next" href="../Engine/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -114,63 +114,110 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#r-type-documentation" class="nav-link">R-Type Documentation</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#prerequisites" class="nav-link">Prerequisites</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#getting-started" class="nav-link">Getting Started</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#doc" class="nav-link">Doc</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="r-type-documentation">R-Type Documentation</h1>
-<p>The R-Type project aims at developing a clone of the classic side-scrolling shoot 'em up arcade game called "R-Type." The project involves creating a server that will run the game, and a client that will be able to display the game. This version of R-Type is multiplayer and the game is developed using a custom engine of our own called Haze.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Before you begin, ensure you have met the following requirements:
-- SFML
-- Asio</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>To install and launch R-Type, follow these steps:</p>
-<ol>
-<li>Clone the github project</li>
-</ol>
-<pre><code>git clone https://github.com/votre-utilisateur/haze-engine.git
-</code></pre>
-<ol>
-<li>Create the build directory</li>
-</ol>
-<pre><code>cmake -S . -B build
-</code></pre>
-<ol>
-<li>Compile the project</li>
-</ol>
-<pre><code>cmake --build build
-</code></pre>
-<ol>
-<li>Execute the binaries
-Server:</li>
-</ol>
-<pre><code>./build/r-type-server
-</code></pre>
-<p>Client:</p>
-<pre><code>./build/r-type-client
-</code></pre>
-<h2 id="doc">Doc</h2>
-<p>[[Haze/Haze introduction]]
-[[Protocol/Protocol]]</p></div>
+<pre><code class="language-cpp">#include &quot;Component.hpp&quot;
+#include &quot;inputs.hpp&quot;
+
+namespace Haze
+{
+    struct Sprite : public Component
+    {
+        Sprite(std::string path) : path(path)
+        {
+            std::cout &lt;&lt; &quot;path &quot; &lt;&lt; path &lt;&lt; std::endl;
+            texture.loadFromFile(path);
+            sprite.setTexture(texture);
+        }
+        std::string path;
+        sf::Sprite sprite;
+        sf::Texture texture;
+        std::string getType() const override{return &quot;Sprite&quot;;}
+        void show() const override { std::cout &lt;&lt; &quot;flm&quot; &lt;&lt; path &lt;&lt; std::endl; }
+    };
+
+    struct Animation : public Component
+    {
+        enum AnimationType
+        {
+            LOOP,
+            BOOMERANG,
+            ONCE
+        };
+        struct intRect
+        {
+            int x;
+            int y;
+            int width;
+            int height;
+        };
+        Animation(std::vector&lt;intRect&gt; frames, AnimationType type, bool direction, double tics) : frames(frames), type(type), tics(tics), direction(direction) {}
+        std::vector&lt;intRect&gt; frames;
+        AnimationType type = AnimationType::LOOP;
+        double tics;
+        size_t currentFrame = 0;
+        bool direction = true;
+        std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; lastAnimation = std::chrono::high_resolution_clock::now();
+        std::string getType() const override { return &quot;Animation&quot;; }
+        void show() const override { std::cout &lt;&lt; &quot;Animation: &quot; &lt;&lt; std::endl; }
+    };
+
+    struct Window : public Component
+    {
+        Window(int width, int height) : width(width), height(height)
+        {
+            window.create(sf::VideoMode(width, height), &quot;R-Type&quot;);
+            window.setFramerateLimit(60);
+            window.setKeyRepeatEnabled(true);
+            view.reset(sf::FloatRect(0, 0, width, height));
+            view.setViewport(sf::FloatRect(0, 0, 1.0f, 1.0f));
+            window.setView(view);
+        }
+        int width;
+        int height;
+        sf::RenderWindow window;
+        sf::View view;
+        sf::Event event;
+        std::string getType() const override{return &quot;Window&quot;;}
+        void show() const override { std::cout &lt;&lt; &quot;Window: &quot; &lt;&lt; width &lt;&lt; &quot;, &quot; &lt;&lt; height &lt;&lt; std::endl; }
+    };
+
+    struct HitboxDisplay : public Component
+    {
+        HitboxDisplay()
+        {
+            rect.setFillColor(sf::Color::Transparent);
+            rect.setOutlineColor(sf::Color::Red);
+            rect.setOutlineThickness(5);
+        }
+        sf::Color color = sf::Color::Red;
+        sf::RectangleShape rect;
+
+        std::string getType() const override{return &quot;HitboxDisplay&quot;;}
+        void show() const override { std::cout &lt;&lt; &quot;HitboxDisplay: &quot; &lt;&lt; std::endl; }
+    };
+
+    struct Text : public Component
+    {
+        Text(std::string text, sf::Color color) : text(text), color(color)
+        {
+            font.loadFromFile(&quot;assets/fonts/arial.ttf&quot;);
+            textObj.setFont(font);
+            textObj.setString(text);
+            textObj.setFillColor(color);
+        }
+        std::string text;
+        sf::Color color;
+        sf::Font font;
+        sf::Text textObj;
+        std::string getType() const override{return &quot;Text&quot;;}
+        void show() const override { std::cout &lt;&lt; &quot;Text: &quot; &lt;&lt; text &lt;&lt; std::endl; }
+    };
+}
+</code></pre></div>
             </div>
         </div>
 
@@ -178,14 +225,14 @@ Server:</li>
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -250,8 +297,3 @@ Server:</li>
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.5.3
-Build Date UTC : 2023-10-07 20:15:25.389730+00:00
--->

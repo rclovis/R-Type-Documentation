@@ -38,11 +38,27 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../Component/" class="dropdown-item">Component</a>
+</li>
+                                    
+<li>
+    <a href="../ComponentGfx/" class="dropdown-item">ComponentGfx</a>
+</li>
+                                    
+<li>
+    <a href="../Engine/" class="dropdown-item">Engine</a>
+</li>
+                                    
+<li>
     <a href="./" class="dropdown-item active">Entity</a>
 </li>
                                     
 <li>
     <a href="../Haze%20introduction/" class="dropdown-item">Haze introduction</a>
+</li>
+                                    
+<li>
+    <a href="../Pipelines/" class="dropdown-item">Pipelines</a>
 </li>
                                 </ul>
                             </li>
@@ -72,7 +88,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../.." class="nav-link">
+                                <a rel="prev" href="../Engine/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -104,12 +120,17 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#synopsys" class="nav-link">Synopsys</a>
+            <li class="nav-item" data-level="2"><a href="#synopsis" class="nav-link">Synopsis</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
             <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#methods" class="nav-link">Methods</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -120,29 +141,40 @@
 
 <h2 id="name">Name</h2>
 <p><code>Haze::Core</code> - a class representing the entities used in the haze engine. </p>
-<h2 id="synopsys">Synopsys</h2>
+<h2 id="synopsis">Synopsis</h2>
 <pre><code class="language-cpp">#include &quot;Component.hpp&quot;
 namespace Haze {
     class Entity {
-        public:
-            Entity();
-            ~Entity();
-            void setComponentList(ComponentList *componentList);
-            void setId(size_t id);
-            void addComponent(Component *component);
-            void removeComponent(std::string type);
-            Component *getComponent(std::string type);
-            void showComponents();
-            size_t getId() const { return _id; };
+    public:
+        Entity(ComponentList *componentList, size_t _id);
+        ~Entity();
+        void addComponent(Component *component);
+        void removeComponent(std::string type);
+        Component *getComponent(std::string type);
+        size_t getId() const { return _id; };
 
-        private:
-            size_t _id;
-            ComponentList *_componentList;
+    private:
+        size_t _id;
+        ComponentList *_componentList;
     };
 }
 </code></pre>
 <h2 id="description">Description</h2>
-<p>Their purpose of the <code>Entity</code> class is to encapsulate a vector of <strong>Components</strong> that will define an element in the engine.</p></div>
+<p>The purpose of the <code>Entity</code> class is to allow the user of Haze to manipulate the components of the system.</p>
+<p>The concept of <code>Entity</code> in Haze is only an id that points toward a list of components</p>
+<h2 id="methods">Methods</h2>
+<pre><code class="language-cpp">void addComponent(Component *component);
+</code></pre>
+<p><code>addComponent</code> is used to add a <strong>component</strong> to an <strong>entity</strong></p>
+<pre><code class="language-cpp">void removeComponent(std::string type);
+</code></pre>
+<p><code>removeComponent</code> is used to remove a <strong>component</strong> from an <strong>entity</strong></p>
+<pre><code class="language-cpp">Component *getComponent(std::string type);
+</code></pre>
+<p><code>getComponent</code> is used to get and modify a <strong>component</strong> of an <strong>entity</strong></p>
+<pre><code class="language-cpp">size_t getId() const { return _id; };
+</code></pre>
+<p><code>getId</code> is used to get the id of an <strong>entity</strong></p></div>
             </div>
         </div>
 
