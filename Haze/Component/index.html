@@ -114,161 +114,210 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#component-core" class="nav-link">Component core:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
+<h2 id="component-core">Component core:</h2>
 <pre><code class="language-cpp">#include &quot;inputs.hpp&quot;
 
 namespace Haze
 {
-    class Component
-    {
-    public:
-        virtual ~Component() {}
-        virtual std::string getType() const = 0;
-        virtual void show() const = 0;
-    };
-
-    struct Position : public Component
-    {
-        Position(float x, float y) : x(x), y(y) {}
-        float x;
-        float y;
-        std::string getType() const override { return &quot;Position&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Position: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
-    };
-
-    struct Scale : public Component
-    {
-        Scale(float x, float y) : x(x), y(y) {}
-        float x;
-        float y;
-        std::string getType() const override { return &quot;Scale&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Scale: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
-    };
-
-    struct Velocity : public Component
-    {
-        Velocity(float x, float y) : x(x), y(y) {}
-        float x;
-        float y;
-        std::string getType() const override { return &quot;Velocity&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Velocity: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
-    };
-
-    struct Move : public Component
-    {
-        Move(float x, float y) : x(x), y(y) {}
-        float x;
-        float y;
-        std::string getType() const override { return &quot;Move&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Move: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
-    };
-
-    struct Health : public Component
-    {
-        Health(int health) : health(health) {}
-        int health;
-        std::string getType() const override { return &quot;Health&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Health: &quot; &lt;&lt; health &lt;&lt; std::endl; }
-    };
-
-    struct Damage : public Component
-    {
-        Damage(int damage) : damage(damage) {}
-        int damage;
-        std::string getType() const override { return &quot;Damage&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Damage: &quot; &lt;&lt; damage &lt;&lt; std::endl; }
-    };
-
-    struct Collision : public Component
-    {
-        enum CollisionType
-        {
-            NONE = 0,
-            LAMBDA = 1,
-            WALL = 2,
-        };
-        struct CollisionInfo
-        {
-            CollisionType type;
-            double tics;
-            std::function&lt;void(int, int)&gt; onCollision = [](int i, int j) {};
-            std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; lastCollision = std::chrono::high_resolution_clock::now();
-        };
-        Collision(std::string scene, std::map&lt;std::string, CollisionInfo&gt; behavior)
-        : scene(scene), behavior(behavior) {}
-
-        std::string scene;
-        std::map&lt;std::string, CollisionInfo&gt; behavior;
-
-        std::string getType() const override { return &quot;Collision&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Collision: &quot; &lt;&lt; scene &lt;&lt; std::endl; }
-    };
-
-    struct Hitbox : public Component
-    {
-        struct intRect
-        {
-            int x;
-            int y;
-            int width;
-            int height;
-        };
-        Hitbox(std::vector&lt;intRect&gt; hitbox) : hitbox(hitbox) {}
-        std::vector&lt;intRect&gt; hitbox;
-        std::string getType() const override { return &quot;Hitbox&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Hitbox: &quot; &lt;&lt; std::endl; }
-    };
-
-    struct LifeTime : public Component
-    {
-        LifeTime(int lifeTime) : lifeTime(lifeTime) {}
-        int lifeTime;
-        int tics = 0;
-        std::string getType() const override { return &quot;LifeTime&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;LifeTime: &quot; &lt;&lt; lifeTime &lt;&lt; std::endl; }
-    };
-
-    struct OnKeyPressed : public Component
-    {
-        OnKeyPressed(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
-        std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
-        size_t player;
-        std::string getType() const override {return &quot;OnKeyPressed&quot;;}
-        void show() const override { std::cout &lt;&lt; &quot;OnKeyPressed&quot; &lt;&lt; std::endl; }
-    };
-
-    struct OnKeyReleased : public Component
-    {
-        OnKeyReleased(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
-        std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
-        size_t player;
-        std::string getType() const override{return &quot;OnKeyReleased&quot;;}
-        void show() const override { std::cout &lt;&lt; &quot;OnKeyReleased&quot; &lt;&lt; std::endl; }
-    };
-
-    struct OnMousePressed : public Component
-    {
-        OnMousePressed(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
-        std::function&lt;void(int)&gt; callback;
-        size_t player;
-        std::string getType() const override{return &quot;OnMousePressed&quot;;}
-        void show() const override { std::cout &lt;&lt; &quot;OnMousePressed&quot; &lt;&lt; std::endl; }
-    };
-
-    struct OnMouseReleased : public Component
-    {
-        OnMouseReleased(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
-        std::function&lt;void(int)&gt; callback;
-        size_t player;
-        std::string getType() const override{return &quot;OnMouseReleased&quot;;}
-        void show() const override { std::cout &lt;&lt; &quot;OnMouseReleased&quot; &lt;&lt; std::endl; }
-    };
+    class Component;
+    struct Position;
+    struct Scale;
+    struct Velocity;
+    struct Move;
+    struct Health;
+    struct Damage;
+    struct Collision;
+    struct Hitbox;
+    struct LifeTime;
+    struct OnKeyPressed;
+    struct OnKeyReleased;
+    struct OnMousePressed;
+    struct OnMouseReleased;
+    struct Hide;
 }
-</code></pre></div>
+</code></pre>
+<pre><code class="language-cpp">struct Position : public Component
+{
+    Position(float x, float y) : x(x), y(y) {}
+    float x;
+    float y;
+    std::string getType() const override { return &quot;Position&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Position: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Position</code> is used to set the position of the entity</p>
+<pre><code class="language-cpp">struct Scale : public Component
+{
+    Scale(float x, float y) : x(x), y(y) {}
+    float x;
+    float y;
+    std::string getType() const override { return &quot;Scale&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Scale: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Scale</code> sets the scale of the entity. This is applied to the <code>Hitbox</code> </p>
+<pre><code class="language-cpp">struct Velocity : public Component
+{
+    Velocity(float x, float y) : x(x), y(y) {}
+    float x;
+    float y;
+    std::string getType() const override { return &quot;Velocity&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Velocity: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Velocity</code> is the movement applied to the entity every frame</p>
+<pre><code class="language-cpp">struct Move : public Component
+{
+    Move(float x, float y) : x(x), y(y) {}
+    float x;
+    float y;
+    std::string getType() const override { return &quot;Move&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Move: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Move</code> is a movement applied only once to the entity, it is automatically destroyed after use</p>
+<pre><code class="language-cpp">struct Health : public Component
+{
+    Health(int health) : health(health) {}
+    int health;
+    std::string getType() const override { return &quot;Health&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Health: &quot; &lt;&lt; health &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Health</code> can be use to setup the health of an entity</p>
+<pre><code class="language-cpp">struct Damage : public Component
+{
+    Damage(int damage) : damage(damage) {}
+    int damage;
+    std::string getType() const override { return &quot;Damage&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Damage: &quot; &lt;&lt; damage &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Damage</code> can be used to setup the damage of an entity</p>
+<pre><code class="language-cpp">struct Collision : public Component
+{
+    enum CollisionType
+    {
+        NONE = 0,
+        LAMBDA = 1,
+        WALL = 2,
+    };
+    struct CollisionInfo
+    {
+        CollisionType type;
+        double tics;
+        std::function&lt;void(int, int)&gt; onCollision = [](int i, int j) {};
+        std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; lastCollision = std::chrono::high_resolution_clock::now();
+    };
+    Collision(std::string scene, std::map&lt;std::string, CollisionInfo&gt; behavior)
+    : scene(scene), behavior(behavior) {}
+
+    std::string scene;
+    std::map&lt;std::string, CollisionInfo&gt; behavior;
+
+    std::string getType() const override { return &quot;Collision&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Collision: &quot; &lt;&lt; scene &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Collision</code> is the component that will define the collision behavior of an entity.
+It takes :
+- a <strong>scene</strong> that will be use as an identification tag for a group of entity
+- and a map of <strong>behavior</strong> that will define what happens on collision between two entity of certain scene.</p>
+<pre><code class="language-cpp">struct Hitbox : public Component
+{
+    struct intRect
+    {
+        int x;
+        int y;
+        int width;
+        int height;
+    };
+    Hitbox(std::vector&lt;intRect&gt; hitbox) : hitbox(hitbox) {}
+    std::vector&lt;intRect&gt; hitbox;
+    std::string getType() const override { return &quot;Hitbox&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Hitbox: &quot; &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Hitbox</code> is used to set the hitbox of an entity
+it is defined as a vector of <code>intRect</code> which allows to have a hitbox composed of multiples rectangles.</p>
+<pre><code class="language-cpp">struct LifeTime : public Component
+{
+    LifeTime(int lifeTime) : lifeTime(lifeTime) {}
+    int lifeTime;
+    int tics = 0;
+    std::string getType() const override { return &quot;LifeTime&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;LifeTime: &quot; &lt;&lt; lifeTime &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>LifeTime</code> can be used to set a lifetime limit for an entity
+This lifetime is expressed in tics.</p>
+<pre><code class="language-cpp">struct OnKeyPressed : public Component
+{
+    OnKeyPressed(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+    std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
+    size_t player;
+    std::string getType() const override {return &quot;OnKeyPressed&quot;;}
+    void show() const override { std::cout &lt;&lt; &quot;OnKeyPressed&quot; &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>OnKeyPressed</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key pressed in the engine.
+The <code>size_t</code> <strong>player</strong> is the id of the inputs.
+The engine can have multiple list of inputs if used as a server.</p>
+<pre><code class="language-cpp">struct OnKeyReleased : public Component
+{
+    OnKeyReleased(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+    std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
+    size_t player;
+    std::string getType() const override{return &quot;OnKeyReleased&quot;;}
+    void show() const override { std::cout &lt;&lt; &quot;OnKeyReleased&quot; &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>OnKeyReleased</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key released in the engine.
+The <code>size_t</code> <strong>player</strong> is the id of the inputs.
+The engine can have multiple list of inputs if used as a server.</p>
+<pre><code class="language-cpp">struct OnMousePressed : public Component
+{
+    OnMousePressed(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+    std::function&lt;void(int)&gt; callback;
+    size_t player;
+    std::string getType() const override{return &quot;OnMousePressed&quot;;}
+    void show() const override { std::cout &lt;&lt; &quot;OnMousePressed&quot; &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>OnMousePressed</code> can be used to set a <strong>callback</strong> to execute every time the mouse is pressed and is intersecting the <strong>hitbox</strong> of the entity.
+The <code>size_t</code> <strong>player</strong> is the id of the inputs.
+The engine can have multiple list of inputs if used as a server.</p>
+<pre><code class="language-cpp">struct OnMouseReleased : public Component
+{
+    OnMouseReleased(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+    std::function&lt;void(int)&gt; callback;
+    size_t player;
+    std::string getType() const override{return &quot;OnMouseReleased&quot;;}
+    void show() const override { std::cout &lt;&lt; &quot;OnMouseReleased&quot; &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>OnMouseReleased</code> can be used to set a <strong>callback</strong> to execute every time the mouse is released and is intersecting the <strong>hitbox</strong> of the entity.
+The <code>size_t</code> <strong>player</strong> is the id of the inputs.
+The engine can have multiple list of inputs if used as a server.</p>
+<pre><code class="language-cpp">struct Hide : public Component
+{
+    Hide() {}
+    std::string getType() const override { return &quot;Hide&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Hide&quot; &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Hide</code> is used to disable an entity.
+When in this state, the entity in not displayed nor can receive inputs or move. </p></div>
             </div>
         </div>
 

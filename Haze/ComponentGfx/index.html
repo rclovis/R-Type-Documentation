@@ -114,110 +114,135 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#component-graphics" class="nav-link">Component graphics:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
+<h2 id="component-graphics">Component graphics:</h2>
 <pre><code class="language-cpp">#include &quot;Component.hpp&quot;
 #include &quot;inputs.hpp&quot;
-
 namespace Haze
 {
-    struct Sprite : public Component
+    struct Sprite;
+    struct Animation;
+    struct Window;
+    struct HitboxDisplay;
+    struct Text;
+}
+</code></pre>
+<pre><code class="language-cpp">struct Sprite : public Component
+{
+    Sprite(std::string path) : path(path)
     {
-        Sprite(std::string path) : path(path)
-        {
-            std::cout &lt;&lt; &quot;path &quot; &lt;&lt; path &lt;&lt; std::endl;
-            texture.loadFromFile(path);
-            sprite.setTexture(texture);
-        }
-        std::string path;
-        sf::Sprite sprite;
-        sf::Texture texture;
-        std::string getType() const override{return &quot;Sprite&quot;;}
-        void show() const override { std::cout &lt;&lt; &quot;flm&quot; &lt;&lt; path &lt;&lt; std::endl; }
+        std::cout &lt;&lt; &quot;path &quot; &lt;&lt; path &lt;&lt; std::endl;
+        texture.loadFromFile(path);
+        sprite.setTexture(texture);
+    }
+    std::string path;
+    sf::Sprite sprite;
+    sf::Texture texture;
+    std::string getType() const override{return &quot;Sprite&quot;;}
+    void show() const override { std::cout &lt;&lt; &quot;flm&quot; &lt;&lt; path &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Sprite</code> is used to set a sprite with a texture to an entity.
+It just takes a <strong>path</strong> for the texture.</p>
+<pre><code class="language-cpp">struct Animation : public Component
+{
+    enum AnimationType
+    {
+        LOOP,
+        BOOMERANG,
+        ONCE
     };
-
-    struct Animation : public Component
+    struct intRect
     {
-        enum AnimationType
-        {
-            LOOP,
-            BOOMERANG,
-            ONCE
-        };
-        struct intRect
-        {
-            int x;
-            int y;
-            int width;
-            int height;
-        };
-        Animation(std::vector&lt;intRect&gt; frames, AnimationType type, bool direction, double tics) : frames(frames), type(type), tics(tics), direction(direction) {}
-        std::vector&lt;intRect&gt; frames;
-        AnimationType type = AnimationType::LOOP;
-        double tics;
-        size_t currentFrame = 0;
-        bool direction = true;
-        std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; lastAnimation = std::chrono::high_resolution_clock::now();
-        std::string getType() const override { return &quot;Animation&quot;; }
-        void show() const override { std::cout &lt;&lt; &quot;Animation: &quot; &lt;&lt; std::endl; }
-    };
-
-    struct Window : public Component
-    {
-        Window(int width, int height) : width(width), height(height)
-        {
-            window.create(sf::VideoMode(width, height), &quot;R-Type&quot;);
-            window.setFramerateLimit(60);
-            window.setKeyRepeatEnabled(true);
-            view.reset(sf::FloatRect(0, 0, width, height));
-            view.setViewport(sf::FloatRect(0, 0, 1.0f, 1.0f));
-            window.setView(view);
-        }
+        int x;
+        int y;
         int width;
         int height;
-        sf::RenderWindow window;
-        sf::View view;
-        sf::Event event;
-        std::string getType() const override{return &quot;Window&quot;;}
-        void show() const override { std::cout &lt;&lt; &quot;Window: &quot; &lt;&lt; width &lt;&lt; &quot;, &quot; &lt;&lt; height &lt;&lt; std::endl; }
     };
-
-    struct HitboxDisplay : public Component
+    Animation(std::vector&lt;intRect&gt; frames, AnimationType type, bool direction, double tics) : frames(frames), type(type), tics(tics), direction(direction) {}
+    std::vector&lt;intRect&gt; frames;
+    AnimationType type = AnimationType::LOOP;
+    double tics;
+    size_t currentFrame = 0;
+    bool direction = true;
+    std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; lastAnimation = std::chrono::high_resolution_clock::now();
+    std::string getType() const override { return &quot;Animation&quot;; }
+    void show() const override { std::cout &lt;&lt; &quot;Animation: &quot; &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Animation</code> is the component that will define how a sprite is animated.
+It takes:
+- a <strong>vector</strong> of <code>IntRect</code> that will define the position and the size of every frame of the animation
+- an <code>AnimationType</code> that will define id the animation is a <code>LOOP</code>, a <code>BOOMERANG</code> or simply a static image (note that you can still have multiple frames and change by hand the <code>currentFrame</code>)
+- a <strong>direction</strong> that will define the direction of the animation (<strong>1</strong> for left to right and <strong>2</strong> for right to left).
+- and a <strong>tics</strong> that will set the time between the updates of the animation.</p>
+<pre><code class="language-cpp">struct Window : public Component
+{
+    Window(int width, int height) : width(width), height(height)
     {
-        HitboxDisplay()
-        {
-            rect.setFillColor(sf::Color::Transparent);
-            rect.setOutlineColor(sf::Color::Red);
-            rect.setOutlineThickness(5);
-        }
-        sf::Color color = sf::Color::Red;
-        sf::RectangleShape rect;
-
-        std::string getType() const override{return &quot;HitboxDisplay&quot;;}
-        void show() const override { std::cout &lt;&lt; &quot;HitboxDisplay: &quot; &lt;&lt; std::endl; }
-    };
-
-    struct Text : public Component
+        window.create(sf::VideoMode(width, height), &quot;R-Type&quot;);
+        window.setFramerateLimit(60);
+        window.setKeyRepeatEnabled(true);
+        view.reset(sf::FloatRect(0, 0, width, height));
+        view.setViewport(sf::FloatRect(0, 0, 1.0f, 1.0f));
+        window.setView(view);
+    }
+    int width;
+    int height;
+    sf::RenderWindow window;
+    sf::View view;
+    sf::Event event;
+    std::string getType() const override{return &quot;Window&quot;;}
+    void show() const override { std::cout &lt;&lt; &quot;Window: &quot; &lt;&lt; width &lt;&lt; &quot;, &quot; &lt;&lt; height &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Window</code> is the component that can set the window for your game.
+A <strong>strong advice</strong> is that the entity who has the component window doesn't have any other component. </p>
+<pre><code class="language-cpp">struct HitboxDisplay : public Component
+{
+    HitboxDisplay()
     {
-        Text(std::string text, sf::Color color) : text(text), color(color)
-        {
-            font.loadFromFile(&quot;assets/fonts/arial.ttf&quot;);
-            textObj.setFont(font);
-            textObj.setString(text);
-            textObj.setFillColor(color);
-        }
-        std::string text;
-        sf::Color color;
-        sf::Font font;
-        sf::Text textObj;
-        std::string getType() const override{return &quot;Text&quot;;}
-        void show() const override { std::cout &lt;&lt; &quot;Text: &quot; &lt;&lt; text &lt;&lt; std::endl; }
-    };
-}
-</code></pre></div>
+        rect.setFillColor(sf::Color::Transparent);
+        rect.setOutlineColor(sf::Color::Red);
+        rect.setOutlineThickness(5);
+    }
+    sf::Color color = sf::Color::Red;
+    sf::RectangleShape rect;
+
+    std::string getType() const override{return &quot;HitboxDisplay&quot;;}
+    void show() const override { std::cout &lt;&lt; &quot;HitboxDisplay: &quot; &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>HitboxDisplay</code> is a debug tool to see the <code>Hitbox</code> of your entity</p>
+<pre><code class="language-cpp">struct Text : public Component {
+    Text(const std::string &amp;text, sf::Color color, const std::string &amp;fontname = &quot;arial.ttf&quot;) : text(text), color(color) {
+        font.loadFromFile(&quot;../assets/fonts/&quot; + fontname);
+        textObj.setFont(font);
+        textObj.setString(text);
+        textObj.setFillColor(color);
+    }
+    std::string text;
+    sf::Color color;
+    sf::Font font;
+    sf::Text textObj;
+    std::string getType() const override {return &quot;Text&quot;;}
+    void show() const override { std::cout &lt;&lt; &quot;Text: &quot; &lt;&lt; text &lt;&lt; std::endl; }
+};
+</code></pre>
+<p><code>Text</code> is used to create a text component to your entity.
+It takes:
+- the <strong>text</strong> you want to display
+- a <strong>color</strong>
+- and a <strong>font name</strong></p></div>
             </div>
         </div>
 
