@@ -165,7 +165,7 @@ namespace Haze
     void show() const override { std::cout &lt;&lt; &quot;Scale: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>Scale</code> sets the scale of the entity. This is applied to the <code>Hitbox</code> </p>
+<p><code>Scale</code> sets the scale of the entity. This is applied to the <code>Hitbox</code></p>
 <pre><code class="language-cpp">struct Velocity : public Component
 {
     Velocity(float x, float y) : x(x), y(y) {}
@@ -230,9 +230,11 @@ namespace Haze
 };
 </code></pre>
 <p><code>Collision</code> is the component that will define the collision behavior of an entity.
-It takes :
-- a <strong>scene</strong> that will be use as an identification tag for a group of entity
-- and a map of <strong>behavior</strong> that will define what happens on collision between two entity of certain scene.</p>
+It takes :</p>
+<ul>
+<li>a <strong>scene</strong> that will be use as an identification tag for a group of entity</li>
+<li>and a map of <strong>behavior</strong> that will define what happens on collision between two entity of certain scene.</li>
+</ul>
 <pre><code class="language-cpp">struct Hitbox : public Component
 {
     struct intRect
@@ -263,51 +265,55 @@ it is defined as a vector of <code>intRect</code> which allows to have a hitbox 
 This lifetime is expressed in tics.</p>
 <pre><code class="language-cpp">struct OnKeyPressed : public Component
 {
-    OnKeyPressed(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+    OnKeyPressed(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t Player = 0) : callback(callback), Player(Player) {}
     std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
-    size_t player;
+    size_t Player;
     std::string getType() const override {return &quot;OnKeyPressed&quot;;}
     void show() const override { std::cout &lt;&lt; &quot;OnKeyPressed&quot; &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>OnKeyPressed</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key pressed in the engine.
-The <code>size_t</code> <strong>player</strong> is the id of the inputs.
+<p><code>OnKeyPressed</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key pressed in the
+engine.
+The <code>size_t</code> <strong>Player</strong> is the id of the inputs.
 The engine can have multiple list of inputs if used as a server.</p>
 <pre><code class="language-cpp">struct OnKeyReleased : public Component
 {
-    OnKeyReleased(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+    OnKeyReleased(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t Player = 0) : callback(callback), Player(Player) {}
     std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
-    size_t player;
+    size_t Player;
     std::string getType() const override{return &quot;OnKeyReleased&quot;;}
     void show() const override { std::cout &lt;&lt; &quot;OnKeyReleased&quot; &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>OnKeyReleased</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key released in the engine.
-The <code>size_t</code> <strong>player</strong> is the id of the inputs.
+<p><code>OnKeyReleased</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key released in the
+engine.
+The <code>size_t</code> <strong>Player</strong> is the id of the inputs.
 The engine can have multiple list of inputs if used as a server.</p>
 <pre><code class="language-cpp">struct OnMousePressed : public Component
 {
-    OnMousePressed(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+    OnMousePressed(std::function&lt;void(int)&gt; callback, size_t Player = 0) : callback(callback), Player(Player) {}
     std::function&lt;void(int)&gt; callback;
-    size_t player;
+    size_t Player;
     std::string getType() const override{return &quot;OnMousePressed&quot;;}
     void show() const override { std::cout &lt;&lt; &quot;OnMousePressed&quot; &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>OnMousePressed</code> can be used to set a <strong>callback</strong> to execute every time the mouse is pressed and is intersecting the <strong>hitbox</strong> of the entity.
-The <code>size_t</code> <strong>player</strong> is the id of the inputs.
+<p><code>OnMousePressed</code> can be used to set a <strong>callback</strong> to execute every time the mouse is pressed and is intersecting the *
+<em>hitbox</em><em> of the entity.
+The <code>size_t</code> </em><em>Player</em>* is the id of the inputs.
 The engine can have multiple list of inputs if used as a server.</p>
 <pre><code class="language-cpp">struct OnMouseReleased : public Component
 {
-    OnMouseReleased(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
+    OnMouseReleased(std::function&lt;void(int)&gt; callback, size_t Player = 0) : callback(callback), Player(Player) {}
     std::function&lt;void(int)&gt; callback;
-    size_t player;
+    size_t Player;
     std::string getType() const override{return &quot;OnMouseReleased&quot;;}
     void show() const override { std::cout &lt;&lt; &quot;OnMouseReleased&quot; &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>OnMouseReleased</code> can be used to set a <strong>callback</strong> to execute every time the mouse is released and is intersecting the <strong>hitbox</strong> of the entity.
-The <code>size_t</code> <strong>player</strong> is the id of the inputs.
+<p><code>OnMouseReleased</code> can be used to set a <strong>callback</strong> to execute every time the mouse is released and is intersecting the
+<strong>hitbox</strong> of the entity.
+The <code>size_t</code> <strong>Player</strong> is the id of the inputs.
 The engine can have multiple list of inputs if used as a server.</p>
 <pre><code class="language-cpp">struct Hide : public Component
 {

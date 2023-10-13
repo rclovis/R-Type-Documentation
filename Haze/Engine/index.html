@@ -174,7 +174,7 @@ namespace Haze
 }
 </code></pre>
 <h2 id="description">Description</h2>
-<p>The purpose of the <code>Engine</code> class is to encapsulate the entire Haze ecosystem so it can be easily used and extended. </p>
+<p>The purpose of the <code>Engine</code> class is to encapsulate the entire Haze ecosystem so it can be easily used and extended.</p>
 <h2 id="methods">Methods</h2>
 <pre><code class="language-cpp">void init();
 </code></pre>
@@ -197,7 +197,9 @@ void removeEntity(Entity *entity);
 <p><code>isOpen</code> tells if the engine is still running</p>
 <pre><code class="language-cpp">void setInfoInputs(info_inputs info, size_t id);
 </code></pre>
-<p><code>setInfoInputs</code> is used to simulate input into the engine. Useful if the engine is running without <strong><code>haze-graphics</code></strong> in a server. It takes an info_inputs defined at [[Protocol]] and an id which is the number of the player how has sent this input.</p>
+<p><code>setInfoInputs</code> is used to simulate input into the engine. Useful if the engine is running without <strong><code>haze-graphics</code></strong>
+in a server. It takes an info_inputs defined at [[Protocol]] and an id which is the number of the Player how has sent
+this input.</p>
 <blockquote>
 <p>[!warning]
 Here id 0 is where is stored the global inputs.
