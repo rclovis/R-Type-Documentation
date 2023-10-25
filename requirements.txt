@@ -13,3 +13,4 @@ PyYAML==6.0.1
 pyyaml_env_tag==0.1
 six==1.16.0
 watchdog==3.0.0
+mkdocs-dracula-theme==1.0.5
