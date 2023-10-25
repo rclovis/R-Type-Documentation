@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Haze introduction - My Docs</title>
+        <title>What is a Pipeline in Haze - My Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,27 +38,47 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Component/" class="dropdown-item">Component</a>
+    <a href="../ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
 </li>
                                     
 <li>
-    <a href="../ComponentGfx/" class="dropdown-item">ComponentGfx</a>
+    <a href="../ComponentCore%20Technical/" class="dropdown-item">ComponentCore Technical</a>
 </li>
                                     
 <li>
-    <a href="../Engine/" class="dropdown-item">Engine</a>
+    <a href="../ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
 </li>
                                     
 <li>
-    <a href="../Entity/" class="dropdown-item">Entity</a>
+    <a href="../ECS/" class="dropdown-item">Understanding the Entity-Component-System (ECS) Architecture</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Haze introduction</a>
+    <a href="../Engine%20Technical/" class="dropdown-item">Engine Technical</a>
 </li>
                                     
 <li>
-    <a href="../Pipelines/" class="dropdown-item">Pipelines</a>
+    <a href="../Entity%20Technical/" class="dropdown-item">Entity Technical</a>
+</li>
+                                    
+<li>
+    <a href="../Getting%20Started/" class="dropdown-item">Haze</a>
+</li>
+                                    
+<li>
+    <a href="../Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
+</li>
+                                    
+<li>
+    <a href="../How%20to%20use/" class="dropdown-item">How to use</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">What is a Pipeline in Haze</a>
+</li>
+                                    
+<li>
+    <a href="../System/" class="dropdown-item">What is a System?</a>
 </li>
                                 </ul>
                             </li>
@@ -88,12 +108,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../Entity/" class="nav-link">
+                                <a rel="prev" href="../How%20to%20use/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../Pipelines/" class="nav-link">
+                                <a rel="next" href="../System/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,18 +135,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#getting-started" class="nav-link">Getting Started</a>
+            <li class="nav-item" data-level="1"><a href="#what-is-a-pipeline-in-haze" class="nav-link">What is a Pipeline in Haze</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#components" class="nav-link">Components</a>
+            <li class="nav-item" data-level="1"><a href="#how-to-build-your-pipeline" class="nav-link">How to build your Pipeline</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#gfxpipeline" class="nav-link">GfxPipeline</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#example-usage" class="nav-link">Example Usage</a>
+            <li class="nav-item" data-level="2"><a href="#corepipeline" class="nav-link">CorePipeline</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -134,91 +157,15 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<blockquote>
-<p>[!abstract] Haze for
-<strong>H</strong>aze
-<strong>A</strong>tomic
-<strong>Z</strong>izi
-<strong>E</strong>ngine</p>
-</blockquote>
-<h2 id="getting-started">Getting Started</h2>
-<p>To get started with the Haze Engine, follow these steps:</p>
-<ol>
-<li>Include the necessary header files:</li>
-</ol>
-<pre><code class="language-cpp">#include &lt;haze-core&gt;
-#include &lt;haze-graphics&gt; //Only if you want to display something
-</code></pre>
-<ol>
-<li>Create an instance of the Haze::Engine class:</li>
-</ol>
-<pre><code class="language-cpp">Haze::Engine engine;
-</code></pre>
-<ol>
-<li>Initialize the engine:</li>
-</ol>
-<pre><code class="language-cpp">engine.init();
-</code></pre>
-<ol>
-<li>Create entities using the Haze::Entity class:</li>
-</ol>
-<pre><code class="language-cpp">Haze::Entity *entity1 = engine.createEntity();
-Haze::Entity *entity2 = engine.createEntity();
-</code></pre>
-<ol>
-<li>Add components to the entities. Here are some examples:</li>
-</ol>
-<pre><code class="language-cpp">//Add a Haze::Position component:
-entity1-&gt;addComponent(new Haze::Position(0, 0));
-
-//Add a Haze::Sprite component:
-entity1-&gt;addComponent(new Haze::Sprite(&quot;assets/ship.png&quot;));
-
-//Add a Haze::Animation component:
-entity1-&gt;addComponent(new Haze::Animation(&quot;assets/r-typesheet30a.gif&quot;, 34, 34, 3, 1));
-
-//Add a Haze::Window component:
-entity2-&gt;addComponent(new Haze::Window(800, 600));
-</code></pre>
-<ol>
-<li>Start the game loop by checking if the engine is open:</li>
-</ol>
-<pre><code class="language-cpp">while (engine.isOpen())
-{
-    engine.update();
-}
-</code></pre>
-<h2 id="components">Components</h2>
-<p>Component of the <strong>haze-core</strong> lib are at:
-[[Component]]</p>
-<p>Component of the <strong>haze-graphics</strong> lib are at:
-[[ComponentGfx]]</p>
-<h2 id="example-usage">Example Usage</h2>
-<p>Here's an example of how to use the Haze Engine to create a simple game loop:</p>
-<pre><code class="language-cpp">#include &lt;Haze&gt;
-
-int main()
-{
-    Haze::Engine engine;
-    engine.init();
-
-    Haze::Entity *entity1 = engine.createEntity();
-    Haze::Entity *entity2 = engine.createEntity();
-
-    entity1-&gt;addComponent(new Haze::Position(0, 0));
-    entity1-&gt;addComponent(new Haze::Sprite(&quot;assets/ship.png&quot;));
-    entity1-&gt;addComponent(new Haze::Animation(&quot;assets/r-typesheet30a.gif&quot;, 34, 34, 3, 1));
-
-    entity2-&gt;addComponent(new Haze::Window(800, 600));
-
-    while (engine.isOpen())
-    {
-        engine.update();
-    }
-
-    return 0;
-}
-</code></pre></div>
+<h1 id="what-is-a-pipeline-in-haze">What is a Pipeline in Haze</h1>
+<p>A pipeline is a way to group systems in Haze. It allows to group systems hence allowing to differentiate easily systems that need additional libraries such as <strong>SFML</strong> from others that don't need it.</p>
+<h1 id="how-to-build-your-pipeline">How to build your Pipeline</h1>
+<p>A pipeline need the inherit from the virtual class <code>IPipeline</code> and only needs to add its systems when constructed.</p>
+<p>Currently there are two existing pipelines in Haze: </p>
+<h2 id="gfxpipeline">GfxPipeline</h2>
+<p>This pipeline gather every system that needs to use <strong>SFML</strong> and is only used un <strong>haze-graphic</strong>.</p>
+<h2 id="corepipeline">CorePipeline</h2>
+<p>This pipeline gather every system that rules basic Haze functionalities like positions, velocity or collisions.</p></div>
             </div>
         </div>
 

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Protocol - My Docs</title>
+        <title>Engine Technical - My Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,69 +33,69 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">R-Type Documentation</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Haze <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Haze/ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
+    <a href="../ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/ComponentCore%20Technical/" class="dropdown-item">ComponentCore Technical</a>
+    <a href="../ComponentCore%20Technical/" class="dropdown-item">ComponentCore Technical</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
+    <a href="../ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/ECS/" class="dropdown-item">Understanding the Entity-Component-System (ECS) Architecture</a>
+    <a href="../ECS/" class="dropdown-item">Understanding the Entity-Component-System (ECS) Architecture</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Engine%20Technical/" class="dropdown-item">Engine Technical</a>
+    <a href="./" class="dropdown-item active">Engine Technical</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Entity%20Technical/" class="dropdown-item">Entity Technical</a>
+    <a href="../Entity%20Technical/" class="dropdown-item">Entity Technical</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Getting%20Started/" class="dropdown-item">Haze</a>
+    <a href="../Getting%20Started/" class="dropdown-item">Haze</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
+    <a href="../Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/How%20to%20use/" class="dropdown-item">How to use</a>
+    <a href="../How%20to%20use/" class="dropdown-item">How to use</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/Pipeline/" class="dropdown-item">What is a Pipeline in Haze</a>
+    <a href="../Pipeline/" class="dropdown-item">What is a Pipeline in Haze</a>
 </li>
                                     
 <li>
-    <a href="../../Haze/System/" class="dropdown-item">What is a System?</a>
+    <a href="../System/" class="dropdown-item">What is a System?</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Protocol <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Component%20Data/" class="dropdown-item">Component Data</a>
+    <a href="../../Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
 </li>
                                     
 <li>
-    <a href="../Inputs/" class="dropdown-item">Inputs</a>
+    <a href="../../Protocol/Inputs/" class="dropdown-item">Inputs</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Protocol</a>
+    <a href="../../Protocol/Protocol/" class="dropdown-item">Protocol</a>
 </li>
                                 </ul>
                             </li>
@@ -108,12 +108,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../Inputs/" class="nav-link">
+                                <a rel="prev" href="../ECS/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../Entity%20Technical/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -135,12 +135,22 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#header" class="nav-link">Header</a>
+            <li class="nav-item" data-level="2"><a href="#name" class="nav-link">Name</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#body" class="nav-link">Body</a>
+            <li class="nav-item" data-level="2"><a href="#synopsis" class="nav-link">Synopsis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#methods" class="nav-link">Methods</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -149,154 +159,77 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="header">Header</h2>
-<p>Each message should have a header with:
-- A <strong>timestamp</strong>
-- An <strong>id</strong>
-- A <strong>body size</strong></p>
-<h3 id="id-client-server">ID Client -&gt; Server</h3>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Body</th>
-<th>Response ID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>INPUT</td>
-<td>info_inputs</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>GET_ENTITY</td>
-<td>id_entity</td>
-<td>INFO_ENTITY</td>
-</tr>
-<tr>
-<td>GET_ENTITIES</td>
-<td>NONE</td>
-<td>INFO_ENTITIES</td>
-</tr>
-<tr>
-<td>GET_COMPONENT</td>
-<td>id_component</td>
-<td>INFO_COMPONENT</td>
-</tr>
-<tr>
-<td>ALIVE</td>
-<td>NONE</td>
-<td>NONE</td>
-</tr>
-</tbody>
-</table>
-<h3 id="id-server-client">ID Server -&gt; Client</h3>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Body</th>
-<th>Response ID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CREATE_ENTITY</td>
-<td>id_entity</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>DELETE_ENTITY</td>
-<td>id_entity</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>ADD_COMPONENT</td>
-<td>info_component</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>REMOVE_COMPONENT</td>
-<td>id_component</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>INFO_COMPONENT</td>
-<td>info_component</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>INFO_ENTITY</td>
-<td>info_entity</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>INFO_ENTITIES</td>
-<td>info_entities</td>
-<td>NONE</td>
-</tr>
-<tr>
-<td>DEAD</td>
-<td>NONE</td>
-<td>NONE</td>
-</tr>
-</tbody>
-</table>
-<h2 id="body">Body</h2>
-<p>The body of a message is just raw data that can be interpreted thanks to the header.</p>
-<ul>
-<li><strong>info_inputs</strong></li>
-</ul>
-<pre><code class="language-cpp">struct info_inputs {
-    std::vector&lt;InputType&gt; inputsPressed;
-    std::vector&lt;InputType&gt; inputsReleased;
-    MouseType mouseType;
-    int x;
-    int y;
-};
+<h2 id="name">Name</h2>
+<p><code>Haze::Engine</code> - a the main engine class.</p>
+<h2 id="synopsis">Synopsis</h2>
+<pre><code class="language-cpp">#include &quot;Entity.hpp&quot;
+#include &quot;ComponentList.hpp&quot;
+#include &quot;IPipeline.hpp&quot;
+#include &quot;protocol.hpp&quot;
+
+namespace Haze
+{
+    class Engine
+    {
+    public:
+        Engine();
+        ~Engine();
+        void init();
+        void update();
+        Entity *createEntity();
+        Entity *getEntity(size_t id);
+        void removeEntity(size_t id);
+        void removeEntity(Entity *entity);
+        bool isOpen();
+        void setInfoInputs(info_inputs info, size_t id);
+        ComponentList *getComponentList();
+        std::vector&lt;info_inputs&gt; *getInfoInputs();
+
+    private:
+        std::vector&lt;std::unique_ptr&lt;Entity&gt;&gt; _entities;
+        std::vector&lt;std::unique_ptr&lt;IPipeline&gt;&gt; _pipelines;
+        ComponentList *_componentList;
+        std::vector&lt;info_inputs&gt; _infoInputs;
+    };
+}
 </code></pre>
-<p>InputType at [[R-Type/Documentation/Protocol/Inputs|Inputs]]
-MouseType at [[R-Type/Documentation/Protocol/Inputs|Inputs]]</p>
-<ul>
-<li><strong>id_entity</strong></li>
-</ul>
-<pre><code class="language-cpp">struct id_entity {
-    int id;
-};
+<h2 id="description">Description</h2>
+<p>The purpose of the <code>Engine</code> class is to encapsulate the entire Haze ecosystem so it can be easily used and extended. </p>
+<h2 id="methods">Methods</h2>
+<pre><code class="language-cpp">void init();
 </code></pre>
-<ul>
-<li><strong>id_component</strong></li>
-</ul>
-<pre><code class="language-cpp">struct id_component {
-    id_entity id;
-    std::string component;
-};
+<p><code>init</code> is used just after the creation of the <strong>engine</strong> and and is used to setup everything in the class</p>
+<pre><code class="language-cpp">void update();
 </code></pre>
-<ul>
-<li><strong>info_entity</strong></li>
-</ul>
-<pre><code class="language-cpp">struct info_entity {
-    id_entity id;
-    std::vector&lt;std::string&gt; components;
-};
+<p><code>update</code> is used to compute one tic of the game. It launches every [[Pipeline]] in the engine</p>
+<pre><code class="language-cpp">Entity *createEntity();
 </code></pre>
-<ul>
-<li><strong>info_component</strong></li>
-</ul>
-<pre><code class="language-cpp">struct info_component {
-    std::string component;
-    std::vector&lt;uint8_t&gt; data = std::vector&lt;uint8_t&gt;(128);
-};
+<p><code>createEntity</code> is used to add an <strong>entity</strong> to the engine</p>
+<pre><code class="language-cpp">Entity *getEntity(size_t id);
 </code></pre>
-<p>Data at [[Component Data]]</p>
-<ul>
-<li><strong>info_entities</strong></li>
-</ul>
-<pre><code class="language-cpp">struct info_entities {
-    std::vector&lt;id_entity&gt; id;
-};
-</code></pre></div>
+<p><code>getEntity</code> is used to get an <strong>entity</strong> from the engine. Returns <code>nullptr</code> if the entity doesn't exits.</p>
+<pre><code class="language-cpp">void removeEntity(size_t id);
+void removeEntity(Entity *entity);
+</code></pre>
+<p><code>removeEntity</code> deletes an <strong>entity</strong> from the engine</p>
+<pre><code class="language-cpp">bool isOpen();
+</code></pre>
+<p><code>isOpen</code> tells if the engine is still running</p>
+<pre><code class="language-cpp">void setInfoInputs(info_inputs info, size_t id);
+</code></pre>
+<p><code>setInfoInputs</code> is used to simulate input into the engine. Useful if the engine is running without <strong><code>haze-graphics</code></strong> in a server. It takes an info_inputs defined at [[Protocol]] and an id which is the number of the player how has sent this input.</p>
+<blockquote>
+<p>[!warning]
+Here id 0 is where is stored the global inputs.
+It is filled automatically by the <code>pullEvent</code> system from <strong>haze-graphics</strong>
+If you are not taking inputs from other players you should not use this method.</p>
+</blockquote>
+<pre><code class="language-cpp">ComponentList *getComponentList();
+</code></pre>
+<p><code>getComponentList</code> gives the <code>ComponentList</code> of the program <em>(mainly internal use)</em>*</p>
+<pre><code class="language-cpp">std::vector&lt;info_inputs&gt; *getInfoInputs();
+</code></pre>
+<p><code>getInfoInputs</code> gives the list of all of the inputs registered in the engine  <em>(mainly internal use)</em>*</p></div>
             </div>
         </div>
 

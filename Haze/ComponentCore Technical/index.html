@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Component - My Docs</title>
+        <title>ComponentCore Technical - My Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,27 +38,47 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Component</a>
+    <a href="../ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
 </li>
                                     
 <li>
-    <a href="../ComponentGfx/" class="dropdown-item">ComponentGfx</a>
+    <a href="./" class="dropdown-item active">ComponentCore Technical</a>
 </li>
                                     
 <li>
-    <a href="../Engine/" class="dropdown-item">Engine</a>
+    <a href="../ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
 </li>
                                     
 <li>
-    <a href="../Entity/" class="dropdown-item">Entity</a>
+    <a href="../ECS/" class="dropdown-item">Understanding the Entity-Component-System (ECS) Architecture</a>
 </li>
                                     
 <li>
-    <a href="../Haze%20introduction/" class="dropdown-item">Haze introduction</a>
+    <a href="../Engine%20Technical/" class="dropdown-item">Engine Technical</a>
 </li>
                                     
 <li>
-    <a href="../Pipelines/" class="dropdown-item">Pipelines</a>
+    <a href="../Entity%20Technical/" class="dropdown-item">Entity Technical</a>
+</li>
+                                    
+<li>
+    <a href="../Getting%20Started/" class="dropdown-item">Haze</a>
+</li>
+                                    
+<li>
+    <a href="../Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
+</li>
+                                    
+<li>
+    <a href="../How%20to%20use/" class="dropdown-item">How to use</a>
+</li>
+                                    
+<li>
+    <a href="../Pipeline/" class="dropdown-item">What is a Pipeline in Haze</a>
+</li>
+                                    
+<li>
+    <a href="../System/" class="dropdown-item">What is a System?</a>
 </li>
                                 </ul>
                             </li>
@@ -88,12 +108,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../.." class="nav-link">
+                                <a rel="prev" href="../ComponentArray/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../ComponentGfx/" class="nav-link">
+                                <a rel="next" href="../ComponentGfx%20Technical/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -165,7 +185,7 @@ namespace Haze
     void show() const override { std::cout &lt;&lt; &quot;Scale: &quot; &lt;&lt; x &lt;&lt; &quot;, &quot; &lt;&lt; y &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>Scale</code> sets the scale of the entity. This is applied to the <code>Hitbox</code></p>
+<p><code>Scale</code> sets the scale of the entity. This is applied to the <code>Hitbox</code> </p>
 <pre><code class="language-cpp">struct Velocity : public Component
 {
     Velocity(float x, float y) : x(x), y(y) {}
@@ -230,11 +250,9 @@ namespace Haze
 };
 </code></pre>
 <p><code>Collision</code> is the component that will define the collision behavior of an entity.
-It takes :</p>
-<ul>
-<li>a <strong>scene</strong> that will be use as an identification tag for a group of entity</li>
-<li>and a map of <strong>behavior</strong> that will define what happens on collision between two entity of certain scene.</li>
-</ul>
+It takes :
+- a <strong>scene</strong> that will be use as an identification tag for a group of entity
+- and a map of <strong>behavior</strong> that will define what happens on collision between two entity of certain scene.</p>
 <pre><code class="language-cpp">struct Hitbox : public Component
 {
     struct intRect
@@ -265,55 +283,51 @@ it is defined as a vector of <code>intRect</code> which allows to have a hitbox 
 This lifetime is expressed in tics.</p>
 <pre><code class="language-cpp">struct OnKeyPressed : public Component
 {
-    OnKeyPressed(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t Player = 0) : callback(callback), Player(Player) {}
+    OnKeyPressed(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
     std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
-    size_t Player;
+    size_t player;
     std::string getType() const override {return &quot;OnKeyPressed&quot;;}
     void show() const override { std::cout &lt;&lt; &quot;OnKeyPressed&quot; &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>OnKeyPressed</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key pressed in the
-engine.
-The <code>size_t</code> <strong>Player</strong> is the id of the inputs.
+<p><code>OnKeyPressed</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key pressed in the engine.
+The <code>size_t</code> <strong>player</strong> is the id of the inputs.
 The engine can have multiple list of inputs if used as a server.</p>
 <pre><code class="language-cpp">struct OnKeyReleased : public Component
 {
-    OnKeyReleased(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t Player = 0) : callback(callback), Player(Player) {}
+    OnKeyReleased(std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
     std::function&lt;void(int, std::vector&lt;InputType&gt;)&gt; callback;
-    size_t Player;
+    size_t player;
     std::string getType() const override{return &quot;OnKeyReleased&quot;;}
     void show() const override { std::cout &lt;&lt; &quot;OnKeyReleased&quot; &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>OnKeyReleased</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key released in the
-engine.
-The <code>size_t</code> <strong>Player</strong> is the id of the inputs.
+<p><code>OnKeyReleased</code> can be used to set a <strong>callback</strong> to execute, with as an argument every simultaneous key released in the engine.
+The <code>size_t</code> <strong>player</strong> is the id of the inputs.
 The engine can have multiple list of inputs if used as a server.</p>
 <pre><code class="language-cpp">struct OnMousePressed : public Component
 {
-    OnMousePressed(std::function&lt;void(int)&gt; callback, size_t Player = 0) : callback(callback), Player(Player) {}
+    OnMousePressed(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
     std::function&lt;void(int)&gt; callback;
-    size_t Player;
+    size_t player;
     std::string getType() const override{return &quot;OnMousePressed&quot;;}
     void show() const override { std::cout &lt;&lt; &quot;OnMousePressed&quot; &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>OnMousePressed</code> can be used to set a <strong>callback</strong> to execute every time the mouse is pressed and is intersecting the *
-<em>hitbox</em><em> of the entity.
-The <code>size_t</code> </em><em>Player</em>* is the id of the inputs.
+<p><code>OnMousePressed</code> can be used to set a <strong>callback</strong> to execute every time the mouse is pressed and is intersecting the <strong>hitbox</strong> of the entity.
+The <code>size_t</code> <strong>player</strong> is the id of the inputs.
 The engine can have multiple list of inputs if used as a server.</p>
 <pre><code class="language-cpp">struct OnMouseReleased : public Component
 {
-    OnMouseReleased(std::function&lt;void(int)&gt; callback, size_t Player = 0) : callback(callback), Player(Player) {}
+    OnMouseReleased(std::function&lt;void(int)&gt; callback, size_t player = 0) : callback(callback), player(player) {}
     std::function&lt;void(int)&gt; callback;
-    size_t Player;
+    size_t player;
     std::string getType() const override{return &quot;OnMouseReleased&quot;;}
     void show() const override { std::cout &lt;&lt; &quot;OnMouseReleased&quot; &lt;&lt; std::endl; }
 };
 </code></pre>
-<p><code>OnMouseReleased</code> can be used to set a <strong>callback</strong> to execute every time the mouse is released and is intersecting the
-<strong>hitbox</strong> of the entity.
-The <code>size_t</code> <strong>Player</strong> is the id of the inputs.
+<p><code>OnMouseReleased</code> can be used to set a <strong>callback</strong> to execute every time the mouse is released and is intersecting the <strong>hitbox</strong> of the entity.
+The <code>size_t</code> <strong>player</strong> is the id of the inputs.
 The engine can have multiple list of inputs if used as a server.</p>
 <pre><code class="language-cpp">struct Hide : public Component
 {

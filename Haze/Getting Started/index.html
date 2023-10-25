@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>ComponentGfx - My Docs</title>
+        <title>Haze - My Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,27 +38,47 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Component/" class="dropdown-item">Component</a>
+    <a href="../ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">ComponentGfx</a>
+    <a href="../ComponentCore%20Technical/" class="dropdown-item">ComponentCore Technical</a>
 </li>
                                     
 <li>
-    <a href="../Engine/" class="dropdown-item">Engine</a>
+    <a href="../ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
 </li>
                                     
 <li>
-    <a href="../Entity/" class="dropdown-item">Entity</a>
+    <a href="../ECS/" class="dropdown-item">Understanding the Entity-Component-System (ECS) Architecture</a>
 </li>
                                     
 <li>
-    <a href="../Haze%20introduction/" class="dropdown-item">Haze introduction</a>
+    <a href="../Engine%20Technical/" class="dropdown-item">Engine Technical</a>
 </li>
                                     
 <li>
-    <a href="../Pipelines/" class="dropdown-item">Pipelines</a>
+    <a href="../Entity%20Technical/" class="dropdown-item">Entity Technical</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Haze</a>
+</li>
+                                    
+<li>
+    <a href="../Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
+</li>
+                                    
+<li>
+    <a href="../How%20to%20use/" class="dropdown-item">How to use</a>
+</li>
+                                    
+<li>
+    <a href="../Pipeline/" class="dropdown-item">What is a Pipeline in Haze</a>
+</li>
+                                    
+<li>
+    <a href="../System/" class="dropdown-item">What is a System?</a>
 </li>
                                 </ul>
                             </li>
@@ -88,12 +108,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../Component/" class="nav-link">
+                                <a rel="prev" href="../Entity%20Technical/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../Engine/" class="nav-link">
+                                <a rel="next" href="../Graphic_encapsulation/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,8 +135,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#component-graphics" class="nav-link">Component graphics:</a>
+            <li class="nav-item" data-level="1"><a href="#haze" class="nav-link">Haze</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ecs" class="nav-link">ECS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#architecture" class="nav-link">Architecture</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#library" class="nav-link">Library</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -124,125 +156,36 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="component-graphics">Component graphics:</h2>
-<pre><code class="language-cpp">#include &quot;Component.hpp&quot;
-#include &quot;inputs.hpp&quot;
-namespace Haze
-{
-    struct Sprite;
-    struct Animation;
-    struct Window;
-    struct HitboxDisplay;
-    struct Text;
-}
+<h1 id="haze">Haze</h1>
+<h2 id="ecs">ECS</h2>
+<p>The Haze engine is a pure <a href="../ECS/">ECS</a> with some little tweaks and additions.
+An ECS architecture has many benefits for a game engine and that is why we chose to use it (benefits described at <a href="../ECS/">ECS</a>)</p>
+<h2 id="architecture">Architecture</h2>
+<p><img alt="architecture" src="../../assets/architecture.png" /></p>
+<p>This is the full architecture of <strong>Haze</strong>.
+As you can see we have the basics of an <strong>ECS</strong> such as Components, Entity and Systems.</p>
+<p>If you want the technical documentation of these parts of Haze you can learn more at  <a href="../ComponentGfx%20Technical/">ComponentsGfx</a>, <a href="../ComponentCore%20Technical/">ComponentsCore</a>, <a href="../Entity%20Technical/">Entities</a> and <a href="../System/">Systems</a>.</p>
+<h3 id="pipelines">Pipelines</h3>
+<p>We have also added <a href="../Pipeline/">Pipelines</a> that allows to group systems hence allowing to differentiate easily systems that need additional libraries such as <strong>SFML</strong> from others that don't need it.</p>
+<h3 id="graphic-encapsulation">Graphic Encapsulation</h3>
+<p><a href="../Graphic_encapsulation/">Graphic encapsulation</a> is also something that we have decided make in our engine. This addition makes it easy to change the graphic library of Haze.</p>
+<h3 id="componentarray-and-entity">ComponentArray and Entity</h3>
+<p>Finally that entirety of the components of the engine is stored in a sigle class <a href="../ComponentArray/">ComponentArray</a> which make the iteration of the component much faster and easier.</p>
+<p><a href="../Entity%20Technical/">Entities</a> are just handlers  for the ComponentArray.</p>
+<h2 id="library">Library</h2>
+<p><strong>Haze</strong> is a currently composed of two different static libraries which are:</p>
+<h3 id="haze-core">haze-core</h3>
+<p>to include with</p>
+<pre><code class="language-cpp">#include &lt;haze-core.hpp&gt;
 </code></pre>
-<pre><code class="language-cpp">struct Sprite : public Component
-{
-    Sprite(std::string path) : path(path)
-    {
-        std::cout &lt;&lt; &quot;path &quot; &lt;&lt; path &lt;&lt; std::endl;
-        texture.loadFromFile(path);
-        sprite.setTexture(texture);
-    }
-    std::string path;
-    sf::Sprite sprite;
-    sf::Texture texture;
-    std::string getType() const override{return &quot;Sprite&quot;;}
-    void show() const override { std::cout &lt;&lt; &quot;flm&quot; &lt;&lt; path &lt;&lt; std::endl; }
-};
+<p>This library gather everything related to <strong>basic</strong> engine working such as <strong>positions</strong>, <strong>velocity</strong> or <strong>collisions</strong>.</p>
+<p>This part of Haze doesn't require any external library to be functional and <strong>can be imported in a server</strong>.</p>
+<h3 id="haze-graphic">haze-graphic</h3>
+<p>to include with</p>
+<pre><code class="language-cpp">#include &lt;haze-graphic.hpp&gt;
 </code></pre>
-<p><code>Sprite</code> is used to set a sprite with a texture to an entity.
-It just takes a <strong>path</strong> for the texture.</p>
-<pre><code class="language-cpp">struct Animation : public Component
-{
-    enum AnimationType
-    {
-        LOOP,
-        BOOMERANG,
-        ONCE
-    };
-    struct intRect
-    {
-        int x;
-        int y;
-        int width;
-        int height;
-    };
-    Animation(std::vector&lt;intRect&gt; frames, AnimationType type, bool direction, double tics) : frames(frames), type(type), tics(tics), direction(direction) {}
-    std::vector&lt;intRect&gt; frames;
-    AnimationType type = AnimationType::LOOP;
-    double tics;
-    size_t currentFrame = 0;
-    bool direction = true;
-    std::chrono::time_point&lt;std::chrono::high_resolution_clock&gt; lastAnimation = std::chrono::high_resolution_clock::now();
-    std::string getType() const override { return &quot;Animation&quot;; }
-    void show() const override { std::cout &lt;&lt; &quot;Animation: &quot; &lt;&lt; std::endl; }
-};
-</code></pre>
-<p><code>Animation</code> is the component that will define how a sprite is animated.
-It takes:
-- a <strong>vector</strong> of <code>IntRect</code> that will define the position and the size of every frame of the animation
-- an <code>AnimationType</code> that will define id the animation is a <code>LOOP</code>, a <code>BOOMERANG</code> or simply a static image (note that you can still have multiple frames and change by hand the <code>currentFrame</code>)
-- a <strong>direction</strong> that will define the direction of the animation (<strong>1</strong> for left to right and <strong>2</strong> for right to left).
-- and a <strong>tics</strong> that will set the time between the updates of the animation.</p>
-<pre><code class="language-cpp">struct Window : public Component
-{
-    Window(int width, int height) : width(width), height(height)
-    {
-        window.create(sf::VideoMode(width, height), &quot;R-Type&quot;);
-        window.setFramerateLimit(60);
-        window.setKeyRepeatEnabled(true);
-        view.reset(sf::FloatRect(0, 0, width, height));
-        view.setViewport(sf::FloatRect(0, 0, 1.0f, 1.0f));
-        window.setView(view);
-    }
-    int width;
-    int height;
-    sf::RenderWindow window;
-    sf::View view;
-    sf::Event event;
-    std::string getType() const override{return &quot;Window&quot;;}
-    void show() const override { std::cout &lt;&lt; &quot;Window: &quot; &lt;&lt; width &lt;&lt; &quot;, &quot; &lt;&lt; height &lt;&lt; std::endl; }
-};
-</code></pre>
-<p><code>Window</code> is the component that can set the window for your game.
-A <strong>strong advice</strong> is that the entity who has the component window doesn't have any other component. </p>
-<pre><code class="language-cpp">struct HitboxDisplay : public Component
-{
-    HitboxDisplay()
-    {
-        rect.setFillColor(sf::Color::Transparent);
-        rect.setOutlineColor(sf::Color::Red);
-        rect.setOutlineThickness(5);
-    }
-    sf::Color color = sf::Color::Red;
-    sf::RectangleShape rect;
-
-    std::string getType() const override{return &quot;HitboxDisplay&quot;;}
-    void show() const override { std::cout &lt;&lt; &quot;HitboxDisplay: &quot; &lt;&lt; std::endl; }
-};
-</code></pre>
-<p><code>HitboxDisplay</code> is a debug tool to see the <code>Hitbox</code> of your entity</p>
-<pre><code class="language-cpp">struct Text : public Component {
-    Text(const std::string &amp;text, sf::Color color, const std::string &amp;fontname = &quot;arial.ttf&quot;) : text(text), color(color) {
-        font.loadFromFile(&quot;../assets/fonts/&quot; + fontname);
-        textObj.setFont(font);
-        textObj.setString(text);
-        textObj.setFillColor(color);
-    }
-    std::string text;
-    sf::Color color;
-    sf::Font font;
-    sf::Text textObj;
-    std::string getType() const override {return &quot;Text&quot;;}
-    void show() const override { std::cout &lt;&lt; &quot;Text: &quot; &lt;&lt; text &lt;&lt; std::endl; }
-};
-</code></pre>
-<p><code>Text</code> is used to create a text component to your entity.
-It takes:
-- the <strong>text</strong> you want to display
-- a <strong>color</strong>
-- and a <strong>font name</strong></p></div>
+<p>This library gather everything related to the graphic part of the engine such as <strong>displaying, getting inputs or playing audio</strong>.</p>
+<p>This part of Haze require the use of <strong>SFML</strong> to be functional and <strong>cannot be imported in a server nor any system with no SFML install</strong>.</p></div>
             </div>
         </div>
 

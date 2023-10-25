@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>My Docs</title>
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Entity Technical - My Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
@@ -20,7 +20,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="/.">My Docs</a>
+                <a class="navbar-brand" href="../..">My Docs</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -31,54 +31,54 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="/." class="nav-link">R-Type Documentation</a>
+                                <a href="../.." class="nav-link">R-Type Documentation</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Haze <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/Haze/ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
+    <a href="../ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
 </li>
                                     
 <li>
-    <a href="/Haze/ComponentCore%20Technical/" class="dropdown-item">ComponentCore Technical</a>
+    <a href="../ComponentCore%20Technical/" class="dropdown-item">ComponentCore Technical</a>
 </li>
                                     
 <li>
-    <a href="/Haze/ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
+    <a href="../ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
 </li>
                                     
 <li>
-    <a href="/Haze/ECS/" class="dropdown-item">Understanding the Entity-Component-System (ECS) Architecture</a>
+    <a href="../ECS/" class="dropdown-item">Understanding the Entity-Component-System (ECS) Architecture</a>
 </li>
                                     
 <li>
-    <a href="/Haze/Engine%20Technical/" class="dropdown-item">Engine Technical</a>
+    <a href="../Engine%20Technical/" class="dropdown-item">Engine Technical</a>
 </li>
                                     
 <li>
-    <a href="/Haze/Entity%20Technical/" class="dropdown-item">Entity Technical</a>
+    <a href="./" class="dropdown-item active">Entity Technical</a>
 </li>
                                     
 <li>
-    <a href="/Haze/Getting%20Started/" class="dropdown-item">Haze</a>
+    <a href="../Getting%20Started/" class="dropdown-item">Haze</a>
 </li>
                                     
 <li>
-    <a href="/Haze/Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
+    <a href="../Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
 </li>
                                     
 <li>
-    <a href="/Haze/How%20to%20use/" class="dropdown-item">How to use</a>
+    <a href="../How%20to%20use/" class="dropdown-item">How to use</a>
 </li>
                                     
 <li>
-    <a href="/Haze/Pipeline/" class="dropdown-item">What is a Pipeline in Haze</a>
+    <a href="../Pipeline/" class="dropdown-item">What is a Pipeline in Haze</a>
 </li>
                                     
 <li>
-    <a href="/Haze/System/" class="dropdown-item">What is a System?</a>
+    <a href="../System/" class="dropdown-item">What is a System?</a>
 </li>
                                 </ul>
                             </li>
@@ -87,15 +87,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
+    <a href="../../Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
 </li>
                                     
 <li>
-    <a href="/Protocol/Inputs/" class="dropdown-item">Inputs</a>
+    <a href="../../Protocol/Inputs/" class="dropdown-item">Inputs</a>
 </li>
                                     
 <li>
-    <a href="/Protocol/Protocol/" class="dropdown-item">Protocol</a>
+    <a href="../../Protocol/Protocol/" class="dropdown-item">Protocol</a>
 </li>
                                 </ul>
                             </li>
@@ -107,6 +107,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Engine%20Technical/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Getting%20Started/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -114,15 +124,77 @@
 
         <div class="container">
             <div class="row">
-
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#name" class="nav-link">Name</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#synopsis" class="nav-link">Synopsis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#description" class="nav-link">Description</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#methods" class="nav-link">Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
+<h2 id="name">Name</h2>
+<p><code>Haze::Core</code> - a class representing the entities used in the haze engine. </p>
+<h2 id="synopsis">Synopsis</h2>
+<pre><code class="language-cpp">#include &quot;Component.hpp&quot;
+namespace Haze {
+    class Entity {
+    public:
+        Entity(ComponentList *componentList, size_t _id);
+        ~Entity();
+        void addComponent(Component *component);
+        void removeComponent(std::string type);
+        Component *getComponent(std::string type);
+        size_t getId() const { return _id; };
+
+    private:
+        size_t _id;
+        ComponentList *_componentList;
+    };
+}
+</code></pre>
+<h2 id="description">Description</h2>
+<p>The purpose of the <code>Entity</code> class is to allow the user of Haze to manipulate the components of the system.</p>
+<p>The concept of <code>Entity</code> in Haze is only an id that points toward a list of components</p>
+<h2 id="methods">Methods</h2>
+<pre><code class="language-cpp">void addComponent(Component *component);
+</code></pre>
+<p><code>addComponent</code> is used to add a <strong>component</strong> to an <strong>entity</strong></p>
+<pre><code class="language-cpp">void removeComponent(std::string type);
+</code></pre>
+<p><code>removeComponent</code> is used to remove a <strong>component</strong> from an <strong>entity</strong></p>
+<pre><code class="language-cpp">Component *getComponent(std::string type);
+</code></pre>
+<p><code>getComponent</code> is used to get and modify a <strong>component</strong> of an <strong>entity</strong></p>
+<pre><code class="language-cpp">size_t getId() const { return _id; };
+</code></pre>
+<p><code>getId</code> is used to get the id of an <strong>entity</strong></p></div>
             </div>
         </div>
 
@@ -130,14 +202,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="/js/jquery-3.6.0.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
+        <script src="../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script>
-            var base_url = "/",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js"></script>
-        <script src="/search/main.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

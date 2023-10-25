@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Pipelines - My Docs</title>
+        <title>What is a System? - My Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,27 +38,47 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Component/" class="dropdown-item">Component</a>
+    <a href="../ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
 </li>
                                     
 <li>
-    <a href="../ComponentGfx/" class="dropdown-item">ComponentGfx</a>
+    <a href="../ComponentCore%20Technical/" class="dropdown-item">ComponentCore Technical</a>
 </li>
                                     
 <li>
-    <a href="../Engine/" class="dropdown-item">Engine</a>
+    <a href="../ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
 </li>
                                     
 <li>
-    <a href="../Entity/" class="dropdown-item">Entity</a>
+    <a href="../ECS/" class="dropdown-item">Understanding the Entity-Component-System (ECS) Architecture</a>
 </li>
                                     
 <li>
-    <a href="../Haze%20introduction/" class="dropdown-item">Haze introduction</a>
+    <a href="../Engine%20Technical/" class="dropdown-item">Engine Technical</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Pipelines</a>
+    <a href="../Entity%20Technical/" class="dropdown-item">Entity Technical</a>
+</li>
+                                    
+<li>
+    <a href="../Getting%20Started/" class="dropdown-item">Haze</a>
+</li>
+                                    
+<li>
+    <a href="../Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
+</li>
+                                    
+<li>
+    <a href="../How%20to%20use/" class="dropdown-item">How to use</a>
+</li>
+                                    
+<li>
+    <a href="../Pipeline/" class="dropdown-item">What is a Pipeline in Haze</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">What is a System?</a>
 </li>
                                 </ul>
                             </li>
@@ -88,7 +108,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../Haze%20introduction/" class="nav-link">
+                                <a rel="prev" href="../Pipeline/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -114,12 +134,32 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#what-is-a-system" class="nav-link">What is a System?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#how-does-a-system-work" class="nav-link">How does a system work</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#types-of-systems-and-pipelines" class="nav-link">Types of Systems and Pipelines</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="what-is-a-system">What is a System?</h1>
+<p>In an ECS architecture, a system is a modular component responsible for processing entities that contain specific components. Each system is designed to handle a specific aspect of the game logic, such as rendering, physics, input, or AI. Systems are used to update the state of entities, implement game rules, and perform various operations.</p>
+<h1 id="how-does-a-system-work">How does a system work</h1>
+<p>A system in Haze will iterate trough the <a href="../ComponentArray/">ComponentArray</a> to modify the components stored inside. By selecting entities with specific components, a system can act on a selected portion of the entities. </p>
+<h1 id="types-of-systems-and-pipelines">Types of Systems and Pipelines</h1>
+<p>In an ECS architecture, various types of systems are commonly used to manage different aspects of a game. We have decided to group these different system types in Pipelines. To lean more about pipeline <a href="../Pipeline/">Pipeline</a>.</p></div>
             </div>
         </div>
 
