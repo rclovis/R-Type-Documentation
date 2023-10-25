@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Understanding the Entity-Component-System (ECS) Architecture - My Docs</title>
+        <title>ECS - My Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../ComponentArray/" class="dropdown-item">What is a ComponentArray</a>
+    <a href="../ComponentArray/" class="dropdown-item">ComponentArray</a>
 </li>
                                     
 <li>
@@ -50,7 +50,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Understanding the Entity-Component-System (ECS) Architecture</a>
+    <a href="./" class="dropdown-item active">ECS</a>
 </li>
                                     
 <li>
@@ -66,7 +66,7 @@
 </li>
                                     
 <li>
-    <a href="../Graphic_encapsulation/" class="dropdown-item">How does the graphic encapsulation work in Haze ?</a>
+    <a href="../Graphic_encapsulation/" class="dropdown-item">Graphic encapsulation</a>
 </li>
                                     
 <li>
@@ -74,11 +74,11 @@
 </li>
                                     
 <li>
-    <a href="../Pipeline/" class="dropdown-item">What is a Pipeline in Haze</a>
+    <a href="../Pipeline/" class="dropdown-item">Pipeline</a>
 </li>
                                     
 <li>
-    <a href="../System/" class="dropdown-item">What is a System?</a>
+    <a href="../System/" class="dropdown-item">System</a>
 </li>
                                 </ul>
                             </li>
@@ -135,24 +135,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#understanding-the-entity-component-system-ecs-architecture" class="nav-link">Understanding the Entity-Component-System (ECS) Architecture</a>
+            <li class="nav-item" data-level="2"><a href="#understanding-the-entity-component-system-ecs-architecture" class="nav-link">Understanding the Entity-Component-System (ECS) Architecture</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#components" class="nav-link">Components</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#entities" class="nav-link">Entities</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#systems" class="nav-link">Systems</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#benefits-of-ecs" class="nav-link">Benefits of ECS</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -160,7 +164,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="understanding-the-entity-component-system-ecs-architecture">Understanding the Entity-Component-System (ECS) Architecture</h1>
+<h2 id="understanding-the-entity-component-system-ecs-architecture">Understanding the Entity-Component-System (ECS) Architecture</h2>
 <p>The Entity-Component-System (ECS) architecture is a design pattern commonly used in game development and simulation systems. It separates the game logic into three distinct parts: entities, components, and systems. This separation promotes modularity, flexibility, and performance in managing complex systems.</p>
 <h2 id="components">Components</h2>
 <p>Components are the building blocks of an ECS. They are small, reusable pieces of data that define the attributes or behaviors of an entity. Each component typically contains only the necessary data and functions required for a specific aspect of the entity. For example, in a game, you might have components like:</p>
