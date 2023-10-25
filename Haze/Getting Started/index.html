@@ -1,162 +1,283 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
+
+<head>
+        <title>Haze - My Docs</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Haze - My Docs</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">My Docs</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../assets/css/dracula-ui.css">
+        <link rel="stylesheet" href="../../assets/css/mkdocs.css">
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href="../.." class="nav-link">R-Type Documentation</a>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Haze <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../ComponentArray/" class="dropdown-item">ComponentArray</a>
-</li>
-                                    
-<li>
-    <a href="../ComponentCore%20Technical/" class="dropdown-item">ComponentCore Technical</a>
-</li>
-                                    
-<li>
-    <a href="../ComponentGfx%20Technical/" class="dropdown-item">ComponentGfx Technical</a>
-</li>
-                                    
-<li>
-    <a href="../ECS/" class="dropdown-item">ECS</a>
-</li>
-                                    
-<li>
-    <a href="../Engine%20Technical/" class="dropdown-item">Engine Technical</a>
-</li>
-                                    
-<li>
-    <a href="../Entity%20Technical/" class="dropdown-item">Entity Technical</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Haze</a>
-</li>
-                                    
-<li>
-    <a href="../Graphic_encapsulation/" class="dropdown-item">Graphic encapsulation</a>
-</li>
-                                    
-<li>
-    <a href="../How%20to%20use/" class="dropdown-item">How to use</a>
-</li>
-                                    
-<li>
-    <a href="../Pipeline/" class="dropdown-item">Pipeline</a>
-</li>
-                                    
-<li>
-    <a href="../System/" class="dropdown-item">System</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Protocol <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../Protocol/Component%20Data/" class="dropdown-item">Component Data</a>
-</li>
-                                    
-<li>
-    <a href="../../Protocol/Inputs/" class="dropdown-item">Inputs</a>
-</li>
-                                    
-<li>
-    <a href="../../Protocol/Protocol/" class="dropdown-item">Protocol</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
+        
+            <link  rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
 
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../Entity%20Technical/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../Graphic_encapsulation/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+</head>
 
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
         </button>
     </div>
 
-    
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
+    <div class="p-4">
+        
+
+        <div class="drac-text-center">
             
-            <li class="nav-item" data-level="1"><a href="#haze" class="nav-link">Haze</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#ecs" class="nav-link">ECS</a>
-              <ul class="nav flex-column">
-              </ul>
+                <span class="drac-text drac-line-height drac-text-white">My Docs</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    R-Type Documentation
+                </a>
             </li>
-            <li class="nav-item" data-level="2"><a href="#architecture" class="nav-link">Architecture</a>
-              <ul class="nav flex-column">
-              </ul>
+            <li class="drac-box">
+                <a href="../.."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#haze-collapse" aria-expanded="false">
+                    Haze
+                </a>
+                <div class="collapse" id="haze-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../ComponentArray/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            ComponentArray
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../ComponentCore%20Technical/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            ComponentCore Technical
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../ComponentGfx%20Technical/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            ComponentGfx Technical
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../ECS/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            ECS
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../Engine%20Technical/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Engine Technical
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../Entity%20Technical/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Entity Technical
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Haze
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../Graphic_encapsulation/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Graphic encapsulation
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../How%20to%20use/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            How to use
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../Pipeline/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Pipeline
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../System/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            System
+        </a>
+    </li>
+                    </ul>
+                </div>
             </li>
-            <li class="nav-item" data-level="2"><a href="#library" class="nav-link">Library</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
+            <li class="drac-box">
+                <a href="../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#protocol-collapse" aria-expanded="false">
+                    Protocol
+                </a>
+                <div class="collapse" id="protocol-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../Protocol/Component%20Data/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Component Data
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../Protocol/Inputs/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Inputs
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../Protocol/Protocol/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Protocol
+        </a>
+    </li>
+                    </ul>
+                </div>
             </li>
         </ul>
+        <!-- endblock -->
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+</nav>
+        <!-- endblock -->
 
-<h1 id="haze">Haze</h1>
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple"">
+        <div class="container-fluid">
+
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../Entity%20Technical/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../Graphic_encapsulation/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="haze">Haze</h1>
 <h2 id="ecs">ECS</h2>
 <p>The Haze engine is a pure <a href="../ECS/">ECS</a> with some little tweaks and additions.
 An ECS architecture has many benefits for a game engine and that is why we chose to use it (benefits described at <a href="../ECS/">ECS</a>)</p>
@@ -185,83 +306,31 @@ As you can see we have the basics of an <strong>ECS</strong> such as Components,
 <pre><code class="language-cpp">#include &lt;haze-graphic.hpp&gt;
 </code></pre>
 <p>This library gather everything related to the graphic part of the engine such as <strong>displaying, getting inputs or playing audio</strong>.</p>
-<p>This part of Haze require the use of <strong>SFML</strong> to be functional and <strong>cannot be imported in a server nor any system with no SFML install</strong>.</p></div>
-            </div>
-        </div>
+<p>This part of Haze require the use of <strong>SFML</strong> to be functional and <strong>cannot be imported in a server nor any system with no SFML install</strong>.</p></p>
+    </article>
+</section>
+            <!-- endblock -->
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../../js/jquery-3.6.0.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js"></script>
-        <script src="../../search/main.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
+</footer>
+            <!-- endblock -->
         </div>
-    </div>
-</div>
 
-    </body>
+    </main>
+
+        <script>var base_url = '../..';</script>
+        <script src="../../assets/js/jquery-3.3.1.slim.min.js""></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js""></script>
+        <script src="../../assets/js/mkdocs.js""></script>
+			<script src="../../search/main.js" defer></script>
+
+</body>
+
 </html>
