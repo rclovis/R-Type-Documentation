@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../Add%20Enemies%20To%20The%20Map/">
+        <link rel="prev" href="../../Protocol/Protocol/">
       
+      
+        <link rel="next" href="../Create%20Explosion/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -260,7 +262,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../Add%20Enemies%20To%20The%20Map/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   Rtype
@@ -742,26 +744,6 @@
                 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../Add%20Enemies%20To%20The%20Map/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Adding Enemies to the Game Map
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -838,6 +820,86 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Create%20Explosion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enemy Creation Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Create%20Map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating a Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Create%20Shot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enemy Creation Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Create%20Wall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enemy Creation Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -861,47 +923,64 @@
 
 
 <h1 id="enemy-creation-documentation">Enemy Creation Documentation</h1>
-<p>This documentation outlines the process of creating enemies for your enemies inside Rtype. You can customize various attributes of your enemies using this data.
+<p>This documentation outlines the process of creating enemies for your enemies inside Rtype. You can customize various
+attributes of your enemies using this data.
 Store your enemy data in a JSON file and save it in the <code>assets/enemies</code> directory.</p>
 <h2 id="enemy-data-structure">Enemy Data Structure</h2>
 <p>The <code>enemies</code> files should contain the following attributes for each enemy:</p>
 <ul>
 <li><code>type</code>: An integer representing the type of enemy.</li>
-<li><code>damage</code>: An integer representing the damage the enemy deals.</li>
-<li><code>life</code>: An integer representing the enemy's life or health points.</li>
+<li><code>damage</code>: An integer representing the damage the enemy deals when he shots. <strong>default 0</strong></li>
+<li><code>life</code>: An integer representing the enemy's life or health points. <strong>-1</strong> if immortal. <strong>default 1</strong></li>
+<li><code>shot_type</code>: An integer representing the type of shot the enemy fires.<strong>-1</strong> if the enemy does not fire. <strong>default -1</strong></li>
+<li><code>explosion_type</code>: An integer representing the type of explosion the enemy makes when he dies. <strong>-1</strong> if the enemy does not explode. <strong>default -1</strong></li>
 <li><code>path_sprite</code>: A string representing the file path to the enemy's sprite image.</li>
-<li><code>hitbox</code>: An object specifying the hitbox dimensions with the following properties:</li>
+<li><code>hitbox</code>: An object specifying the hitbox dimensions with the following properties:<ul>
 <li><code>x</code>: The x-coordinate of the hitbox's top-left corner.</li>
 <li><code>y</code>: The y-coordinate of the hitbox's top-left corner.</li>
 <li><code>width</code>: The width of the hitbox.</li>
 <li><code>height</code>: The height of the hitbox.</li>
-<li><code>animation</code>: An object specifying the animation dimensions with the following properties:</li>
+</ul>
+</li>
+<li>
+<p><code>fly</code>: A boolean indicating if the enemy can fly. If false, the enemy will be fixed to the ground or the ceiling. <strong>default false</strong></p>
+</li>
+<li>
+<p><code>animation_tics</code>: A float representing the time between animation frames. <strong>default 0.1</strong></p>
+</li>
+<li><code>animation_type</code>: A string representing the type of animation. <strong>default "loop"</strong></li>
+<li><code>animation</code>: An object specifying the animation dimensions with the following properties:<ul>
 <li><code>x</code>: The x-coordinate of the animation's top-left corner.</li>
 <li><code>y</code>: The y-coordinate of the animation's top-left corner.</li>
 <li><code>width</code>: The width of the animation.</li>
 <li><code>height</code>: The height of the animation.</li>
 </ul>
+</li>
+</ul>
 <h3 id="heres-an-example-json-data-structure-for-an-enemy">Here's an example JSON data structure for an enemy:</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;damage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;life&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;path_sprite&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assets/sprites/enemy.gif&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;hitbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">&quot;animation_tics&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">&quot;animation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;loop&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">&quot;animation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">      </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="c1">// Additional animation properties...</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;shot_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;explosion_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;path_sprite&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assets/sprites/r-typesheet12.gif&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;hitbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">&quot;fly&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">&quot;animation_tics&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nt">&quot;animation_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;loop&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nt">&quot;animation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="c1">// Additional animation properties...</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">}</span>
 </code></pre></div>
 
 
