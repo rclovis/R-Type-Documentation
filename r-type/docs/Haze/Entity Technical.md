@@ -40,9 +40,9 @@ void removeComponent(std::string type);
 ```cpp
 Component *getComponent(std::string type);
 ```
-`getComponent` is used to get and modify a **component** of an **entity**
+`getComponent` is used to comp and modify a **component** of an **entity**
 
 ```cpp
 size_t getId() const { return _id; };
 ```
-`getId` is used to get the id of an **entity**
+`getId` is used to comp the id of an **entity**
