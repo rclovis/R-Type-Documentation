@@ -963,42 +963,44 @@
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="description">Description</h2>
-<p>The purpose of the <code>Engine</code> class is to encapsulate the entire Haze ecosystem so it can be easily used and extended. </p>
+<p>The purpose of the <code>Engine</code> class is to encapsulate the entire Haze ecosystem so it can be easily used and extended.</p>
 <h2 id="methods">Methods</h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">();</span>
 </code></pre></div>
-<code>init</code> is used just after the creation of the <strong>engine</strong> and and is used to setup everything in the class</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">();</span>
+<p><code>init</code> is used just after the creation of the <strong>engine</strong> and and is used to setup everything in the class</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">();</span>
 </code></pre></div>
-<code>update</code> is used to compute one tic of the game. It launches every [[Pipeline]] in the engine</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Entity</span><span class="w"> </span><span class="o">*</span><span class="nf">createEntity</span><span class="p">();</span>
+<p><code>update</code> is used to compute one tic of the game. It launches every [[Pipeline]] in the engine</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Entity</span><span class="w"> </span><span class="o">*</span><span class="nf">createEntity</span><span class="p">();</span>
 </code></pre></div>
-<code>createEntity</code> is used to add an <strong>entity</strong> to the engine</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Entity</span><span class="w"> </span><span class="o">*</span><span class="nf">getEntity</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<p><code>createEntity</code> is used to add an <strong>entity</strong> to the engine</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Entity</span><span class="w"> </span><span class="o">*</span><span class="nf">getEntity</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
 </code></pre></div>
-<code>getEntity</code> is used to comp an <strong>entity</strong> from the engine. Returns <code>nullptr</code> if the entity doesn't exits.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">removeEntity</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<p><code>getEntity</code> is used to comp an <strong>entity</strong> from the engine. Returns <code>nullptr</code> if the entity doesn't exits.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">removeEntity</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">removeEntity</span><span class="p">(</span><span class="n">Entity</span><span class="w"> </span><span class="o">*</span><span class="n">entity</span><span class="p">);</span>
 </code></pre></div>
-<code>removeEntity</code> deletes an <strong>entity</strong> from the engine</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">isOpen</span><span class="p">();</span>
+<p><code>removeEntity</code> deletes an <strong>entity</strong> from the engine</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">isOpen</span><span class="p">();</span>
 </code></pre></div>
-<code>isOpen</code> tells if the engine is still running</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setInfoInputs</span><span class="p">(</span><span class="n">info_inputs</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<p><code>isOpen</code> tells if the engine is still running</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">setInfoInputs</span><span class="p">(</span><span class="n">info_inputs</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
 </code></pre></div>
-<code>setInfoInputs</code> is used to simulate input into the engine. Useful if the engine is running without <strong><code>haze-graphics</code></strong> in a server. It takes an info_inputs defined at [[Protocol]] and an id which is the number of the player how has sent this input.</p>
+<p><code>setInfoInputs</code> is used to simulate input into the engine. Useful if the engine is running without <strong><code>haze-graphics</code></strong>
+in a server. It takes an info_inputs defined at [[Protocol]] and an id which is the number of the player how has sent
+this input.</p>
 <blockquote>
 <p>[!warning]
 Here id 0 is where is stored the global inputs.
 It is filled automatically by the <code>pullEvent</code> system from <strong>haze-graphics</strong>
 If you are not taking inputs from other players you should not use this method.</p>
 </blockquote>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">ComponentList</span><span class="w"> </span><span class="o">*</span><span class="nf">getComponentList</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">ComponentList</span><span class="w"> </span><span class="o">*</span><span class="nf">getComponentList</span><span class="p">();</span>
 </code></pre></div>
-<code>getComponentList</code> gives the <code>ComponentList</code> of the program <em>(mainly internal use)</em>*</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">info_inputs</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">getInfoInputs</span><span class="p">();</span>
+<p><code>getComponentList</code> gives the <code>ComponentList</code> of the program <em>(mainly internal use)</em>*</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">info_inputs</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">getInfoInputs</span><span class="p">();</span>
 </code></pre></div>
-<code>getInfoInputs</code> gives the list of all of the inputs registered in the engine  <em>(mainly internal use)</em>*</p>
+<p><code>getInfoInputs</code> gives the list of all of the inputs registered in the engine  <em>(mainly internal use)</em>*</p>
 
 
 

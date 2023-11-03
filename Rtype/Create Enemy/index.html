@@ -932,8 +932,10 @@ Store your enemy data in a JSON file and save it in the <code>assets/enemies</co
 <li><code>type</code>: An integer representing the type of enemy.</li>
 <li><code>damage</code>: An integer representing the damage the enemy deals when he shots. <strong>default 0</strong></li>
 <li><code>life</code>: An integer representing the enemy's life or health points. <strong>-1</strong> if immortal. <strong>default 1</strong></li>
-<li><code>shot_type</code>: An integer representing the type of shot the enemy fires.<strong>-1</strong> if the enemy does not fire. <strong>default -1</strong></li>
-<li><code>explosion_type</code>: An integer representing the type of explosion the enemy makes when he dies. <strong>-1</strong> if the enemy does not explode. <strong>default -1</strong></li>
+<li><code>shot_type</code>: An integer representing the type of shot the enemy fires.<strong>-1</strong> if the enemy does not fire. **default -1
+  **</li>
+<li><code>explosion_type</code>: An integer representing the type of explosion the enemy makes when he dies. <strong>-1</strong> if the enemy does
+  not explode. <strong>default -1</strong></li>
 <li><code>path_sprite</code>: A string representing the file path to the enemy's sprite image.</li>
 <li><code>hitbox</code>: An object specifying the hitbox dimensions with the following properties:<ul>
 <li><code>x</code>: The x-coordinate of the hitbox's top-left corner.</li>
@@ -943,7 +945,8 @@ Store your enemy data in a JSON file and save it in the <code>assets/enemies</co
 </ul>
 </li>
 <li>
-<p><code>fly</code>: A boolean indicating if the enemy can fly. If false, the enemy will be fixed to the ground or the ceiling. <strong>default false</strong></p>
+<p><code>fly</code>: A boolean indicating if the enemy can fly. If false, the enemy will be fixed to the ground or the ceiling. *
+  <em>default false</em>*</p>
 </li>
 <li>
 <p><code>animation_tics</code>: A float representing the time between animation frames. <strong>default 0.1</strong></p>

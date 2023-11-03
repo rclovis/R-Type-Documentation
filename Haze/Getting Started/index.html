@@ -973,33 +973,42 @@
 <h1 id="getting-started">Getting Started</h1>
 <h2 id="ecs">ECS</h2>
 <p>The Haze engine is a pure <a href="../ECS/">ECS</a> with some little tweaks and additions.
-An ECS architecture has many benefits for a game engine and that is why we chose to use it (benefits described at <a href="../ECS/">ECS</a>)</p>
+An ECS architecture has many benefits for a game engine and that is why we chose to use it (benefits described
+at <a href="../ECS/">ECS</a>)</p>
 <h2 id="architecture">Architecture</h2>
 <p><img alt="architecture" src="../../assets/architecture.png" /></p>
 <p>This is the full architecture of <strong>Haze</strong>.
 As you can see we have the basics of an <strong>ECS</strong> such as Components, Entity and Systems.
-If you want the technical documentation of these parts of Haze you can learn more at  <a href="../ComponentGfx%20Technical/">ComponentsGfx</a>, <a href="../ComponentCore%20Technical/">ComponentsCore</a>, <a href="../Entity%20Technical/">Entities</a> and <a href="../System/">Systems</a>.</p>
+If you want the technical documentation of these parts of Haze you can learn more
+at  <a href="../ComponentGfx%20Technical/">ComponentsGfx</a>, <a href="../ComponentCore%20Technical/">ComponentsCore</a>, <a href="../Entity%20Technical/">Entities</a>
+and <a href="../System/">Systems</a>.</p>
 <h3 id="pipelines">Pipelines</h3>
-<p>We have also added <a href="../Pipeline/">Pipelines</a> that allows to group systems hence allowing to differentiate easily systems that need additional libraries such as <strong>SFML</strong> from others that don't need it.</p>
+<p>We have also added <a href="../Pipeline/">Pipelines</a> that allows to group systems hence allowing to differentiate easily systems
+that need additional libraries such as <strong>SFML</strong> from others that don't need it.</p>
 <h3 id="graphic-encapsulation">Graphic Encapsulation</h3>
-<p><a href="../Graphic_encapsulation/">Graphic encapsulation</a> is also something that we have decided make in our engine. This addition makes it easy to change the graphic library of Haze.</p>
+<p><a href="../Graphic_encapsulation/">Graphic encapsulation</a> is also something that we have decided make in our engine. This
+addition makes it easy to change the graphic library of Haze.</p>
 <h3 id="componentarray-and-entity">ComponentArray and Entity</h3>
-<p>Finally that entirety of the components of the engine is stored in a sigle class <a href="../ComponentArray/">ComponentArray</a> which make the iteration of the component much faster and easier.</p>
-<p><a href="../Entity%20Technical/">Entities</a> are just handlers  for the ComponentArray.</p>
+<p>Finally that entirety of the components of the engine is stored in a sigle class <a href="../ComponentArray/">ComponentArray</a>
+which make the iteration of the component much faster and easier.</p>
+<p><a href="../Entity%20Technical/">Entities</a> are just handlers for the ComponentArray.</p>
 <h2 id="library">Library</h2>
 <p><strong>Haze</strong> is a currently composed of two different static libraries which are:</p>
 <h3 id="haze-core">haze-core</h3>
-<p>to include with
+<p>to include with</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;haze-core.hpp&gt;</span>
-</code></pre></div></p>
-<p>This library gather everything related to <strong>basic</strong> engine working such as <strong>positions</strong>, <strong>velocity</strong> or <strong>collisions</strong>.
+</code></pre></div>
+<p>This library gather everything related to <strong>basic</strong> engine working such as <strong>positions</strong>, <strong>velocity</strong> or <strong>collisions
+</strong>.
 This part of Haze doesn't require any external library to be functional and <strong>can be imported in a server</strong>.</p>
 <h3 id="haze-graphic">haze-graphic</h3>
-<p>to include with
+<p>to include with</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;haze-graphic.hpp&gt;</span>
-</code></pre></div></p>
-<p>This library gather everything related to the graphic part of the engine such as <strong>displaying, getting inputs or playing audio</strong>.
-This part of Haze require the use of <strong>SFML</strong> to be functional and <strong>cannot be imported in a server nor any system with no SFML install</strong>.</p>
+</code></pre></div>
+<p>This library gather everything related to the graphic part of the engine such as <strong>displaying, getting inputs or playing
+audio</strong>.
+This part of Haze require the use of <strong>SFML</strong> to be functional and <strong>cannot be imported in a server nor any system with
+no SFML install</strong>.</p>
 
 
 

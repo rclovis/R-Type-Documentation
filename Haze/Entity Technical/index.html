@@ -929,7 +929,7 @@
   <h1>Entity Technical</h1>
 
 <h2 id="name">Name</h2>
-<p><code>Haze::Core</code> - a class representing the entities used in the haze engine. </p>
+<p><code>Haze::Core</code> - a class representing the entities used in the haze engine.</p>
 <h2 id="synopsis">Synopsis</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Component.hpp&quot;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Haze</span><span class="w"> </span><span class="p">{</span>
@@ -952,18 +952,18 @@
 <p>The purpose of the <code>Entity</code> class is to allow the user of Haze to manipulate the components of the system.</p>
 <p>The concept of <code>Entity</code> in Haze is only an id that points toward a list of components</p>
 <h2 id="methods">Methods</h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">addComponent</span><span class="p">(</span><span class="n">Component</span><span class="w"> </span><span class="o">*</span><span class="n">component</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">addComponent</span><span class="p">(</span><span class="n">Component</span><span class="w"> </span><span class="o">*</span><span class="n">component</span><span class="p">);</span>
 </code></pre></div>
-<code>addComponent</code> is used to add a <strong>component</strong> to an <strong>entity</strong></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">removeComponent</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
+<p><code>addComponent</code> is used to add a <strong>component</strong> to an <strong>entity</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">removeComponent</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
 </code></pre></div>
-<code>removeComponent</code> is used to remove a <strong>component</strong> from an <strong>entity</strong></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Component</span><span class="w"> </span><span class="o">*</span><span class="nf">getComponent</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
+<p><code>removeComponent</code> is used to remove a <strong>component</strong> from an <strong>entity</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Component</span><span class="w"> </span><span class="o">*</span><span class="nf">getComponent</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">type</span><span class="p">);</span>
 </code></pre></div>
-<code>getComponent</code> is used to comp and modify a <strong>component</strong> of an <strong>entity</strong></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">size_t</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">_id</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<p><code>getComponent</code> is used to comp and modify a <strong>component</strong> of an <strong>entity</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">size_t</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">_id</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
 </code></pre></div>
-<code>getId</code> is used to comp the id of an <strong>entity</strong></p>
+<p><code>getId</code> is used to comp the id of an <strong>entity</strong></p>
 
 
 

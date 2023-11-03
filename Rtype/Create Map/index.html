@@ -977,7 +977,8 @@
 
 
 <h1 id="creating-a-map">Creating a Map</h1>
-<p>This documentation explains how to create a map for Rtype with json data. You can customize various attributes of your map using this data. Ensure that you store your map data in a JSON file and save it in the <code>assets/maps</code> directory.</p>
+<p>This documentation explains how to create a map for Rtype with json data. You can customize various attributes of your
+map using this data. Ensure that you store your map data in a JSON file and save it in the <code>assets/maps</code> directory.</p>
 <h2 id="json-map-data-structure">JSON Map Data Structure</h2>
 <p>The JSON map data should include the following attributes:</p>
 <!--
@@ -985,6 +986,7 @@
 - `path_background`: A string representing the file path to the map's background image.
 - `path_music`: A string representing the file path to the map's background music.
 -->
+
 <ul>
 <li><code>walls</code>: the path to the json file containing the walls data.</li>
 <li><code>map</code>: An array of objects specifying the map dimensions with the following properties:<ul>
@@ -1010,11 +1012,14 @@
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="adding-enemies-to-the-game-map">Adding Enemies to the Game Map</h2>
-<p>This documentation explains how to add enemies to your game map in Rtype using JSON data. Customize the behavior of each enemy by specifying various attributes. Ensure that you store your enemy data in a JSON file and save it in the <code>assets/enemies</code> directory.</p>
+<p>This documentation explains how to add enemies to your game map in Rtype using JSON data. Customize the behavior of each
+enemy by specifying various attributes. Ensure that you store your enemy data in a JSON file and save it in
+the <code>assets/enemies</code> directory.</p>
 <h3 id="json-enemy-data-structure">JSON Enemy Data Structure</h3>
 <p>The JSON enemy data should include the following attributes for each enemy:</p>
 <ul>
-<li><code>type</code>: An integer representing the type of enemy. All enemies have a unique type, you can find the type of an enemy inside the directory <code>assets/enemies</code>.</li>
+<li><code>type</code>: An integer representing the type of enemy. All enemies have a unique type, you can find the type of an enemy
+  inside the directory <code>assets/enemies</code>.</li>
 <li><code>x</code>: The x-coordinate of the enemy's initial position, from the position of the tile.</li>
 <li><code>y</code>: The y-coordinate of the enemy's initial position. 0 is the top of the screen.</li>
 <li><code>velocity_x</code>: The horizontal velocity of the enemy.</li>
