@@ -936,13 +936,9 @@
   <h1>ECS</h1>
 
 <h2 id="understanding-the-entity-component-system-ecs-architecture">Understanding the Entity-Component-System (ECS) Architecture</h2>
-<p>The Entity-Component-System (ECS) architecture is a design pattern commonly used in game development and simulation
-systems. It separates the game logic into three distinct parts: entities, components, and systems. This separation
-promotes modularity, flexibility, and performance in managing complex systems.</p>
+<p>The Entity-Component-System (ECS) architecture is a design pattern commonly used in game development and simulation systems. It separates the game logic into three distinct parts: entities, components, and systems. This separation promotes modularity, flexibility, and performance in managing complex systems.</p>
 <h2 id="components">Components</h2>
-<p>Components are the building blocks of an ECS. They are small, reusable pieces of data that define the attributes or
-behaviors of an entity. Each component typically contains only the necessary data and functions required for a specific
-aspect of the entity. For example, in a game, you might have components like:</p>
+<p>Components are the building blocks of an ECS. They are small, reusable pieces of data that define the attributes or behaviors of an entity. Each component typically contains only the necessary data and functions required for a specific aspect of the entity. For example, in a game, you might have components like:</p>
 <ul>
 <li><code>Position</code>: Contains position of the entity</li>
 <li><code>Sprite</code>: Contains information about the entity's visual representation.</li>
@@ -953,14 +949,10 @@ For more information about components in Haze:
 <a href="../ComponentGfx%20Technical/">ComponentsGfx</a>
 <a href="../ComponentCore%20Technical/">ComponentsCore</a></p>
 <h2 id="entities">Entities</h2>
-<p>Entities are the game objects themselves. An entity is essentially a container that groups together one or more
-components. Entities don't have behavior on their own but gain behavior by having the appropriate components attached.
-For example, a player character entity might consist of a <code>Position</code>, a <code>Sprite</code>, and an <code>Input</code>.</p>
+<p>Entities are the game objects themselves. An entity is essentially a container that groups together one or more components. Entities don't have behavior on their own but gain behavior by having the appropriate components attached. For example, a player character entity might consist of a <code>Position</code>, a <code>Sprite</code>, and an <code>Input</code>.</p>
 <p>Entities are typically identified by a unique ID or a name to make them easy to reference.</p>
 <h2 id="systems">Systems</h2>
-<p>Systems are responsible for updating and processing entities and their components. Each system has a specific role, such
-as rendering, physics simulation, or input handling. Systems iterate over the entities that contain the necessary
-components they are designed to operate on. For example:</p>
+<p>Systems are responsible for updating and processing entities and their components. Each system has a specific role, such as rendering, physics simulation, or input handling. Systems iterate over the entities that contain the necessary components they are designed to operate on. For example:</p>
 <ul>
 <li>The <code>RenderSystem</code> processes entities with <code>SpriteComponent</code> to render them on the screen.</li>
 <li>The <code>PhysicsSystem</code> handles entities with <code>PhysicsComponent</code> to simulate physics interactions.</li>

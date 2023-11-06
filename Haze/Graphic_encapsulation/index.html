@@ -562,6 +562,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-do-dynamic-libraries-are-used-in-haze" class="md-nav__link">
+    How do dynamic libraries are used in Haze ?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -909,29 +916,22 @@
 
 <h2 id="how-does-the-graphic-encapsulation-work-in-haze">How does the graphic encapsulation work in Haze ?</h2>
 <p>The graphic encapsulation exists to allows to change easily the graphic library of the engine.</p>
-<p>Multiples virtual class exits in this encapsulation those are:</p>
-<ul>
-<li>ISprite</li>
-<li>ITexture</li>
-<li>IText</li>
-<li>IAudio</li>
-<li>IWindow</li>
-<li>IInput</li>
-<li>IRect</li>
-<li>IColor</li>
-</ul>
+<p>Multiples virtual class exits in this encapsulation those are:
+- <strong>IDisplay</strong>
+- ISprite
+- ITexture
+- IText
+- IAudio
+- IWindow
+- IInput
+- IRect
+- IColor
+- IAudioBuffer
+- IFont</p>
 <p>Each of these class needs to be inherited to allows for full support of a graphic lib.</p>
-<p>For now Haze support <strong>SFML</strong> with</p>
-<ul>
-<li>SfSprite</li>
-<li>SfTexture</li>
-<li>SfText</li>
-<li>SfAudio</li>
-<li>SfWindow</li>
-<li>SfInput</li>
-<li>SfRect</li>
-<li>SfColor</li>
-</ul>
+<h2 id="how-do-dynamic-libraries-are-used-in-haze">How do dynamic libraries are used in Haze ?</h2>
+<p>Since graphic libraries are loaded from dynamic libraries in Haze, it's very easy to add or change graphic libraries. The compilation of these libraries are done using cmake and the <code>.so</code> are put into the <code>Haze/lib</code> directory.
+These <code>.so</code> files are then loaded into the engine depending of which library you want to use.</p>
 
 
 
