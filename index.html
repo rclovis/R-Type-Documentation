@@ -366,21 +366,42 @@
       
         <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
-    Getting Started
+    🚀 Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linuxmacos" class="md-nav__link">
+    Linux/MacOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
-    Documentation
+    📋 Documentation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creator" class="md-nav__link">
-    Creator
+  <a href="#credits" class="md-nav__link">
+    👤 Credits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    🛠️ Tools
   </a>
   
 </li>
@@ -933,10 +954,10 @@ This version of R-Type is multiplayer and the game is developed using a custom e
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, ensure you have met the following requirements:</p>
 <ul>
-<li>SFML</li>
-<li>Asio</li>
+<li>cmake</li>
+<li>git</li>
 </ul>
-<h2 id="getting-started">Getting Started</h2>
+<h2 id="getting-started">🚀 Getting Started</h2>
 <p>To install and launch R-Type, follow these steps:</p>
 <ol>
 <li>Clone the github project</li>
@@ -944,57 +965,69 @@ This version of R-Type is multiplayer and the game is developed using a custom e
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/votre-utilisateur/haze-engine.git
 </code></pre></div>
 <ol>
+<li>Download the dependenties</li>
+</ol>
+<blockquote>
+<h2 id="linuxmacos">Linux/MacOS</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git clone https://github.com/Microsoft/vcpkg.git
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>./vcpkg/bootstrap-vcpkg.sh
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>./vcpkg/vcpkg install
+</code></pre></div>
+<h2 id="windows">Windows</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git clone https://github.com/Microsoft/vcpkg.git
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>.\vcpkg\bootstrap-vcpkg.bat
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>.\vcpkg\vcpkg install
+</code></pre></div>
+<p>[!warning]
+These commands must be executed at the root of this project</p>
+</blockquote>
+<ol>
 <li>Create the build directory</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cmake -S . -B build
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cmake -S . -B build
 </code></pre></div>
 <ol>
 <li>Compile the project</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cmake --build build
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cmake --build build
 </code></pre></div>
 <ol>
 <li>Execute the binaries
    Server:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./build/r-type-server
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./build/r-type-server
 </code></pre></div>
 <p>Client:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./build/r-type-client
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./build/r-type-client
 </code></pre></div>
-<h2 id="documentation">Documentation</h2>
-<p><a href="Haze/Getting%20Started/">Haze</a>
-<a href="Protocol.md">Protocol</a></p>
-<h2 id="creator">Creator</h2>
-<div align="center">
-<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
-<div style="text-align: center; margin: 10px;">
-<img src="https://avatars.githubusercontent.com/u/91875893?v=4" width="200" height="200">
-<p>Clovis</p>
-<p><a href="mailto:clovis.rabot@epitech.eu">clovis.rabot@epitech.eu</a></p>
+<h2 id="documentation">📋 Documentation</h2>
+<p><a href="https://rclovis.github.io/R-Type-Documentation/">Haze introduction</a></p>
+<p><a href="https://rclovis.github.io/R-Type-Documentation/Haze/Getting%20Started/">Game Engine</a></p>
+<p><a href="https://rclovis.github.io/R-Type-Documentation/Protocol/Protocol/">Protocol</a></p>
+<p><a href="https://rclovis.github.io/R-Type-Documentation/Rtype/Create%20Enemy/">Rtype</a></p>
+<h2 id="credits">👤 Credits</h2>
+<p>Click on the images below to visit the GitHub profiles of our awesome contributors:</p>
+<div style="display: flex; justify-content: space-between;">
+    <a href="https://github.com/EstusSipper">
+        <img src="https://media.licdn.com/dms/image/C4E03AQF6AIitN8q7cg/profile-displayphoto-shrink_400_400/0/1651531289334?e=1703721600&v=beta&t=nCsDz0wBgls-nLvLAzpAZqELOfTItPVJtoWJwRtmSGk" width="150" height="150">
+    </a>
+    <a href="https://github.com/rclovis">
+        <img src="https://avatars.githubusercontent.com/u/91875893?v=4" width="150" height="150">
+    </a>
+    <a href="https://github.com/NielsOuvrard">
+        <img src="https://avatars.githubusercontent.com/u/91876336?v=4" width="150" height="150">
+    </a>
+    <a href="https://github.com/CorentinFortes">
+        <img src="https://avatars.githubusercontent.com/u/91876233?v=4" width="150" height="150">
+    </a>
+    <a href="https://github.com/AngeloZhou22">
+        <img src="https://avatars.githubusercontent.com/u/91876442?s=400&u=e17541db376ba488505351104ee598772dbe67a2&v=4" width="150" height="150">
+    </a>
 </div>
-<div style="text-align: center; margin: 10px;">
-<img src="https://media.licdn.com/dms/image/C4E03AQF6AIitN8q7cg/profile-displayphoto-shrink_400_400/0/1651531289334?e=1703721600&v=beta&t=nCsDz0wBgls-nLvLAzpAZqELOfTItPVJtoWJwRtmSGk" width="200" height="200">
-<p>Erwan</p>
-<p><a href="mailto:erwan.gonzales@epitech.eu">erwan.gonzales@epitech.eu</a></p>
-</div>
-<div style="text-align: center; margin: 10px;">
-<img src="https://avatars.githubusercontent.com/u/91876233?v=4" width="200" height="200">
-<p>Corentin</p>
-<p><a href="mailto:corentin.fortes@epitech.eu">corentin.fortes@epitech.eu</a></p>
-</div>
-<div style="text-align: center; margin: 10px;">
-<img src="https://avatars.githubusercontent.com/u/91876336?v=4" width="200" height="200">
-<p>Niels</p>
-<p><a href="mailto:niels.ouvrard@epitech.eu">niels.ouvrard@epitech.eu</a></p>
-</div>
-<div style="text-align: center; margin: 10px;">
-<img src="https://avatars.githubusercontent.com/u/91876442?s=400&u=e17541db376ba488505351104ee598772dbe67a2&v=4" width="200" height="200">
-<p>Angelo</p>
-<p><a href="mailto:angelo.zhou@epitech.eu">angelo.zhou@epitech.eu</a></p>
-</div>
-</div>
-</div>
+
+<h2 id="tools">🛠️ Tools</h2>
+<p><a href="https://cmake.org/"><img alt="Built with CMake" src="https://img.shields.io/badge/Built%20with-CMake-1f425f.svg" /></a> <a href="https://en.cppreference.com/w/cpp/17"><img alt="Made with C++" src="https://img.shields.io/badge/Made%20with-C%2B%2B-9683EC.svg" /></a> <a href="https://www.sfml-dev.org/"><img alt="Made with SFML" src="https://img.shields.io/badge/Made%20with-SFML-009688.svg" /></a> <a href="https://libsdl.org/"><img alt="Made with SDL2" src="https://img.shields.io/badge/Made%20with-SDL2-orange.svg" /></a> <a href="https://think-async.com/Asio/"><img alt="Made with ASIO" src="https://img.shields.io/badge/Made%20with-ASIO-yellow.svg" /></a> <a href="https://vcpkg.io/"><img alt="Made with Vcpkg" src="https://img.shields.io/badge/Made%20with-Vcpkg-7056bf.svg" /></a>
+<a href="https://www.linux.org/"><img alt="Linux" src="https://img.shields.io/badge/Linux-Supported-brightgreen.svg" /></a> <a href="https://www.microsoft.com/en-us/windows"><img alt="Windows" src="https://img.shields.io/badge/Windows-Supported-brightgreen.svg" /></a> <a href="https://www.apple.com/macos"><img alt="macOS" src="https://img.shields.io/badge/macOS-Supported-brightgreen.svg" /></a> <a href="https://rclovis.github.io/R-Type-Documentation/"><img alt="Documentation" src="https://img.shields.io/badge/Documentation-Yes-brightgreen.svg" /></a></p>
 
 
 
