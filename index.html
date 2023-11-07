@@ -984,7 +984,7 @@ These commands must be executed at the root of this project</p>
 <ol>
 <li>Create the build directory</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cmake -S . -B build
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=./vcpkg/scripts/buildsystems/vcpkg.cmake
 </code></pre></div>
 <ol>
 <li>Compile the project</li>
@@ -993,13 +993,11 @@ These commands must be executed at the root of this project</p>
 </code></pre></div>
 <ol>
 <li>Execute the binaries
-   Server:</li>
-</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./build/r-type-server
 </code></pre></div>
-<p>Client:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./build/r-type-client
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./build/r-type-client [sfml/sdl]
+</code></pre></div></li>
+</ol>
 <h2 id="documentation">📋 Documentation</h2>
 <p><a href="https://rclovis.github.io/R-Type-Documentation/">Haze introduction</a></p>
 <p><a href="https://rclovis.github.io/R-Type-Documentation/Haze/Getting%20Started/">Game Engine</a></p>
